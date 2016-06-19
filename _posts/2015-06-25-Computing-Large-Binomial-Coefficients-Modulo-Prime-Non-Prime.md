@@ -4,7 +4,7 @@ title:  "Computing Large Binomial Coefficients Modulo Prime / Non-Prime"
 date:   2015-06-25 22:15:53 +0000
 modified: 2015-06-28 21:41:03 +0000 
 comments: true
-permalink: weblog/2015/06/25/computing-large-binomial-coefficients-modulo-prime-non-prime
+permalink: weblog/2015/06/25/computing-large-binomial-coefficients-modulo-prime-non-prime/
 redirect_from:
   - /weblog/B/
 categories: algorithm python

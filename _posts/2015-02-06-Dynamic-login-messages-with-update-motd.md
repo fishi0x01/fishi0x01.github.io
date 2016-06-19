@@ -3,7 +3,7 @@ layout: post
 title:  "Dynamic login messages with update-motd"
 date:   2015-02-06 20:00:35 +0000
 modified: 2015-06-22 13:13:17 +0000 
-permalink: weblog/2015/02/06/dyamic-login-messages-update-motd
+permalink: weblog/2015/02/06/dyamic-login-messages-update-motd/
 comments: true
 redirect_from:
   - /weblog/5/

@@ -4,7 +4,7 @@ title:  "Common Bitwise Techniques for Subset Iterations"
 date:   2015-05-18 22:00:44 +0000
 modified: 2015-06-19 12:03:12 +0000 
 comments: true
-permalink: weblog/2015/05/18/common-bitwise-techniques-subset-iterations
+permalink: weblog/2015/05/18/common-bitwise-techniques-subset-iterations/
 redirect_from:
   - /weblog/9/
 categories: algorithm python
