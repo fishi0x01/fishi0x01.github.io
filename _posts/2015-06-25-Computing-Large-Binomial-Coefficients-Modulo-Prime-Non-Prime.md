@@ -10,7 +10,7 @@ redirect_from:
 categories: algorithm python
 ---
 
-{% math %}
+{% include tags/math.html %}
 
 Not rarely, in combinatoric problems it comes down to calculating the [binomial coefficient][wiki-binomial-coefficient] \\(n \choose k\\) for very large \\(n\\) and/or \\(k\\) modulo a number \\(m\\). 
 In general, the binomial coefficient can be formulated with [factorials][wiki-factorials] as \\({n \choose k} = \frac{n!}{k!(n-k)!}, 0 \leq k \leq n\\). 
@@ -69,7 +69,7 @@ Consequently, we can easily find the multiplicative inverse through modular expo
 
 {% gist fishi0x01/46ebb1d310df5f9b5d8c fermat_binom.py %}
 
-{% hint %}
+{% include tags/hint-start.html %}
 Computing the factorial \\(n!\\) takes \\(O(n)\\) and computing one multiplicative inverse takes \\(O(\log_2 n)\\). 
 Note, that we implemented two versions here: 
 
@@ -82,7 +82,7 @@ Whether we use pre-computed tables or not highly depends on \\(n\\)'s expected s
 In case we have very large \\(n\\), pre-computing the factorial and inverse tables with Fermat's theorem (space complexity \\(O(n)\\) and runtime of pre-computation \\(O(n \log_2 n)\\)) might still be too expensive. 
 In all other cases, pre-computing is desired since it will save us a lot of time later on. 
 In the following I will only show algorithms without pre-computation, since those are also working for very large \\(n\\), but changing those algorithms to pre-computed versions can be done easily (analogous to the current example), since the core idea is still the same. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 Note, that this code is only working as long as \\(k < m\\), since otherwise \\(k! \mod m = 0\\), which means there is no inverse defined. 
 Luckily, with slight modifications we can work around this issue. 
@@ -109,10 +109,10 @@ These problems can then be solved using Fermat's theorem like we did before.
 
 {% gist fishi0x01/46ebb1d310df5f9b5d8c lucas_binom.py %}
 
-{% hint %}
+{% include tags/hint-start.html %}
 A little side fact: Lucas' theorem gives an efficient way of determining whether our prime \\(m\\) is a divisor of the binomial coefficient, without calculating the coefficient itself. 
 All we have to do is compare the digits of \\(n\\) and \\(k\\) in their base \\(m\\) representation \\(n = n_0 + n_1 \cdot m^1 + n_2 \cdot m^2...\\) and \\(k = k_0 + k_1 \cdot m^1 + k_2 \cdot m^2 ...\\) and if in at least one case \\(k_i > n_i\\), then the product of all sub binomial coefficients would be 0, since \\({n \choose k} = 0\\), when \\(k > n\\). 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 We used Lucas' theorem to first split the problem into smaller binomial coefficients that we could then use to find our solution. 
 In order to solve the small coefficients, we used Fermat's theorem like in the previous section of this post. 
@@ -120,12 +120,12 @@ We could have also used Pascal's Triangle in order to compute these small coeffi
 Also, in case \(n\) and \(k\) are smaller than \(m\), Lucas' theorem would not have brought any benefits, because the smallest sub problem would then be the original problem itself. 
 However, in that case Lucas' theorem does only bear the small overhead of bringing \\(n\\) and \\(k\\) in base \\(m\\) representation, which is why in general it is a good approach to first try splitting the problem into smaller sub problems with Lucas' theorem, then using Pascal's Triangle or Fermat's theorem to solve these sub problems. 
 
-{% hint %}
+{% include tags/hint-start.html %}
 Remember, in this example we did not use pre-computation, which makes it more efficient when computing only one single very large \\(n\\). 
 Whether we use pre-computed tables or not highly depends on the expected size of \\(n\\) (which when using Lucas' theorem, is the biggest prime factor in \\(m\\)) and whether we expect to calculate many different coefficients. 
 In case our sub problems have still very large \\(n\\), pre-computing the factorial and inverse tables with Fermat's theorem (space complexity \\(O(n)\\) and initial runtime \\(O(n \log_2 n)\\)) might still be too expensive to be feasible. 
 In all other cases, pre-computing is desired since it will save us a lot of time later on. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 All in all, now we have efficient ways of computing large binomial coefficients modulo a prime number.
 
@@ -151,12 +151,12 @@ We see, that by applying the CRT to those congruence systems, we can combine the
 
 {% gist fishi0x01/46ebb1d310df5f9b5d8c lucas_crt_binom.py %}
 
-{% hint %}
+{% include tags/hint-start.html %}
 Finding the prime factorization of \\(m\\) is non-trivial and no efficient algorithm is known so far that can solve this problem for large \\(m\\). 
 However, as long as \\(m\\) has a reasonable size (and that is very likely in those combinatoric problems), finding the prime factorization is feasible. 
 You can write your own algorithm or use some online calculators to determine the prime factors. 
 Also remember that our current approach is only valid for \\(m\\) whose prime factors are square-free. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 Now we are also able to compute large binomial coefficients modulo numbers whose prime factorization is square-free. 
 
@@ -178,9 +178,9 @@ We should do the following steps in order to compute large binomial coefficients
 * Solve sub problems \\({n \choose k} \mod p_i^{e_i}\\) with Fermat's little theorem or Pascal's Triangle
 * Use Chinese Remainder Theorem to combine sub results
 
-{% hint %}
+{% include tags/hint-start.html %}
 Remember, if \\(p_i > n\\), then there are no sub problems and we basically just solve the problem at hand using Fermat's little theorem or Pascal's Triangle.
-{% endhint %}
+{% include tags/hint-end.html %}
 
 That's it! 
 Now we can compute the binomial coefficients for very large numbers for any modulo \\(m\\).

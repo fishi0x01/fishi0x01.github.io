@@ -25,9 +25,9 @@ How this can be done is explained [here][debian-ff].
 Most servers do not have a display - so in order to start a browser and run UI tests, in a next step we have to install a virtual display environment. 
 For this purpose we can install [xvfb][xvfb]: 
 
-{% shell %}
+{% include tags/shell-start.html %}
 $ sudo apt-get install xvfb
-{% endshell %}
+{% include tags/shell-end.html %}
 
 xvfb can then be used to start a virtual display in which we can run our browser window. 
 
@@ -35,14 +35,14 @@ Now we also need a way to start xvfb from within our test.
 [PyVirtualDisplay][py-virt-disp] is a wrapper for xvfb, which makes it easy for us to create a virtual display inside our python code. 
 It can be simply installed via pip (preferably inside your virtual python environment):
 
-{% shell %}
+{% include tags/shell-start.html %}
 (py-env)$ pip install pyvirtualdisplay
-{% endshell %}
+{% include tags/shell-end.html %}
 
-{% hint %}
+{% include tags/hint-start.html %}
 I strongly recommend the use of [virtual python environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/) when working with Django. 
 These can save you from a lot of trouble in case you are having multiple projects on the same server - especially when upgrades and migrations are coming closer!
-{% endhint %}
+{% include tags/hint-end.html %}
 
 At the end of this post I show a test case in which a virtual display with the help of PyVirtualDisplay is created. 
 
@@ -51,9 +51,9 @@ I've had very good experiences with Selenium in the past.
 It has a great community and quick fixes for new browser versions. 
 Lucky for us, Selenium also comes for Python and can be installed via pip: 
 
-{% hint %}
+{% include tags/hint-start.html %}
 (py-env)$ pip install selenium
-{% endhint %}
+{% include tags/hint-end.html %}
 
 ### An Example Test ###
 Now that we have everything installed/setup, lets take a look at a very basic "Hello World!" example test case for a basic html test website, which is returned when calling /test/example on our Django server. 
@@ -67,13 +67,13 @@ Next, we use the Selenium Firefox webdriver and open our test website.
 After this, we try to fetch the element with the id `test`, retrieve its text and verify that it is indeed "Hello World!". 
 When the test finishes, we tear down the browser and the virtual display. Yep, it's that easy!
 
-{% hint %}
+{% include tags/hint-start.html %}
 I use Django's `@skipIf` tag in order to easily disable functional UI tests. 
 As we could see, functional UI tests require extra packages and a specific browser. 
 In case you only want to test those on the CI server you have to set inside the CI's project's `settings.py`: `SKIP_FUNCTIONAL_TESTS = False`. 
 The Developer's client on the other hand could easily disable the functional tests by not setting `SKIP_FUNCTIONAL_TESTS` at all in his local project's `settings.py`. 
 Thus, on a local dev client one could easily exclude functional tests and only perform unit tests. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 That's it! 
 We are now able to easily write UI tests. 

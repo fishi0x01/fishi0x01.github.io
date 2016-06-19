@@ -10,7 +10,7 @@ redirect_from:
 categories: algorithm python
 ---
 
-{% math %}
+{% include tags/math.html %}
 
 Some problems, especially in combinatorics require to iterate over subsets of a given 1-dimensional array with \\(N\\) elements. 
 There are different ways to approach this topic, but the most common and elegant solutions in my opinion involve bitwise operations. 
@@ -51,9 +51,9 @@ Now lets put this thought in python code:
 We use each binary digit of our `mask` as a flag which indicates whether an array's index is part of the current subset or not. 
 With `((mask >> n)&1)` we get a hold of the \\(n\\)th bit from the right of `mask`. 
 
-{% hint %}
+{% include tags/hint-start.html %}
 Note, that since we are iterating over \\(2^N\\) subsets this algorithm has exponential time complexity and thus is very slow for big \\(N\\)!
-{% endhint %}
+{% include tags/hint-end.html %}
 
 ## Iterate over subsets of size exactly \\(K\\) ##
 Now what if we only want to find all the subsets of a fixed size \\(K\\), \\(0 \le K \le N\\)? 
@@ -90,7 +90,7 @@ Here is how that would look like in python:
 The approach is very similar to the one we previously used for determining the Power set. 
 The only major difference is that we do not simply increment our mask by 1 each iteration, but instead use Gosper's hack to find the next mask with exactly the same amount of 1 bits. 
 
-{% hint %}
+{% include tags/hint-start.html %}
 Again this is an expensive algorithm. 
 In the Power set case we were looking for \\(2^N\\) subsets. 
 Further, the [binomial theorem](https://en.wikipedia.org/wiki/Binomial_theorem) states that \\((1+x)^n = \sum\limits_{k=0}^n {n \choose k} x^k\\). 
@@ -99,7 +99,7 @@ In this case (for \\(x=1\\)) we can translate that to \\(2^N = \sum\limits_{K=0}
 In words this means that the binomial coefficient \\(N \choose K\\) is the number of subsets of size \\(K\\) in a set of \\(N\\) elements. 
 Thus, the sum of all subsets of any size \\(K, 1 \leq K \leq N\\) is the amount of subsets in the Power set (which is \\(2^N\\)). 
 Hence, when looking for subsets of size exactly \\(K\\) the algorithm iterates over \\(N \choose K\\) subsets.
-{% endhint %}
+{% include tags/hint-end.html %}
 
 ## Iterate over subsets of sizes \\(\le K\\) ##
 Finally, lets iterate over all the subsets of size \\(X\\), \\(0 \le X \le K\\). 
@@ -113,9 +113,9 @@ In order to determine the next mask, we check whether the current mask has less 
 In that case, we know that by adding 1 at maximum one more bit will be set to 1. 
 Otherwise we determine the mask's lowest set bit and add it to its value.
 
-{% hint %}
+{% include tags/hint-start.html %}
 In this case we got \\(\sum\limits_{i=0}^K {N \choose i}\\) subsets.
-{% endhint %}
+{% include tags/hint-end.html %}
 
 
 [wiki-powerset]: http://en.wikipedia.org/wiki/Power_set

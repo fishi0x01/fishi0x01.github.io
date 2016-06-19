@@ -61,12 +61,15 @@ Besides querying performance counters, we could also subscribe a listener to lis
 
 {% gist fishi0x01/51f6b1b2ea81f112a3ea WMIEventListener.java %}
 
-{% hint %}
+{% include tags/hint-start.html %}
 Even in case the listener is not actively waiting (blocked state in `NextEvent` Call), the events do not get lost. 
 Through our initial subscription the events are being stored at the remote Windows machine until we make the `NextEvent` Call or the WMI connection is shutdown. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 That's it! We can now easliy remotely monitor our WMI target machine.
 
 
+[blog-enable-dcom]: http://fishi.devtail.com/weblog/2/
+[j-interop]: http://j-interop.org/
+[j-interop-jar]: http://sourceforge.net/projects/j-interop/files/
 [microsoft-wmi-docs]: https://msdn.microsoft.com/en-us/library/aa394388%28v=vs.85%29.aspx

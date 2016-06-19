@@ -10,6 +10,8 @@ redirect_from:
 categories: ci django python
 ---
 
+{% include tags/math.html %}
+
 Recently, I had to measure the bandwidth and round-trip time of different simultaneous TCP connections in order to estimate optimal traffic distributions over different interfaces. 
 That's why in this post I want to cover how to measure the [goodput][wiki-goodput] (i.e., the application level throughput) and round-trip time of a TCP connection inside the application layer. 
 We will measure both metrics while we download a file via HTTP (since HTTP is implemented on top of TCP).<!--more-->

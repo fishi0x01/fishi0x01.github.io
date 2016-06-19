@@ -75,9 +75,9 @@ You could add it to your `/etc/hosts`.
 
 We could now run our playbook via:
 
-{% shell %}
+{% include tags/shell-start.html %}
 ansible-playbook -i inventories/dev app.yml
-{% endshell %}
+{% include tags/shell-end.html %}
 
 We now have a simple and fully functional playbook. 
 In the next sections I want to encrypt the secrets in our playbook and run tests via Travis CI.
@@ -97,29 +97,29 @@ Please consult the [documentation][ansible-vault] for more commands of `ansible-
 By storing the vault password in a file we can use our playbooks without decrypting the encrypted files directly on the disk. 
 As an example we could use the following command to rollout a playbook with vault encrypted files: 
 
-{% shell %}
+{% include tags/shell-start.html %}
 ansible-playbook -i inventories/travis my-playbook.yml --vault-password-file vault_pass_file
-{% endshell %}
+{% include tags/shell-end.html %}
 
 Ansible will then decrypt the files in memory and rollout the playbook. 
 
-{% hint %}
+{% include tags/hint-start.html %}
 Remember to add the `vault_pass_file` to your `.gitignore`, so you do not add the password to your repository by accident. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 For our playbook example from the previous section, we could encrypt our default variables, to keep our port and group access settings a secret. 
 First, we generate a complex vault password and store it in `vault_pass_file`. 
 Then, we run:
 
-{% shell %}
+{% include tags/shell-start.html %}
 ANSIBLE_VAULT_PASSWORD_FILE=vault_pass_file ansible-vault encrypt roles/ssh/defaults/main.yml
-{% endshell %}
+{% include tags/shell-end.html %}
 
 We could then rollout the playbook via:
 
-{% shell %}
+{% include tags/shell-start.html %}
 ansible-playbook -i inventories/dev app.yml --vault-password-file vault_pass_file
-{% endshell %}
+{% include tags/shell-end.html %}
 
 ### Secret Templates ###
 
@@ -131,9 +131,9 @@ There is a [discussion][ansible-discuss] on github about enabling this feature a
 
 Lets rename our `sshd_config.j2` template to `sshd_config.j2.enc` and encrypt it by simply running:
 
-{% shell %}
+{% include tags/shell-start.html %}
 ANSIBLE_VAULT_PASSWORD_FILE=vault_pass_file ansible-vault encrypt roles/ssh/templates/sshd_config.j2.enc
-{% endshell %}
+{% include tags/shell-end.html %}
 
 We now need to make a small adjustment to our ssh role's `main.yml`, so it first locally decrypts the template and after the rollout removes the decrypted template again.
 
@@ -141,11 +141,11 @@ We now need to make a small adjustment to our ssh role's `main.yml`, so it first
 
 {% gist fishi0x01/4d613f4fb0034b7197a92cd36bd34801 roles-ssh-tasks-main-decrypt.yml %}
 
-{% hint %}
+{% include tags/hint-start.html %}
 Note, that I set `changed_when: False` for decryption and removal, since without it each run would result in changes, which would make idempotency tests very difficult. 
 Also, `local_action` has problems to source the python virtualenv inside Travis, which is why I handle the decryption inside Travis with a separate script. 
 This does not affect non-Travis rollouts.
-{% endhint %}
+{% include tags/hint-end.html %}
 
 In case we are not dealing with templates, but with static encrypted files instead, we could use the Ansible `lookup` feature together with the `content` setting of the `copy` module:
 
@@ -180,7 +180,7 @@ Next, we rollout the playbook against the local VM.
 Finally, we make an idempotence test by rolling out the same playbook against localhost again. 
 In order to succeed this test, there should not be any changes. 
 
-{% hint %}
+{% include tags/hint-start.html %}
 Currently we only have one playbook to test, but we can simply test multiple playbooks in parallel by adding them to the `env.matrix` section. 
 For instance if we had a playbook `db.yml`, we could also test it in parallel by simply adding it to the test matrix:
 
@@ -192,7 +192,7 @@ env:
     - PLAYBOOK=app.yml
     - PLAYBOOK=db.yml
 </pre>
-{% endhint %}
+{% include tags/hint-end.html %}
 
 ### Tests with encrypted files ###
 
@@ -203,22 +203,22 @@ Here is the official documentation about [file encryption in Travis][travis-encr
 
 In our case one way to approach this problem is by encrypting our `vault_pass_file` to `vault_pass_file.enc` with a complex password via OpenSSL. 
 
-{% shell %}
+{% include tags/shell-start.html %}
 openssl aes-256-cbc -k "&lt;my-very-strong-password&gt;" -in vault_pass_file -out vault_pass_file.enc
-{% endshell %}
+{% include tags/shell-end.html %}
 
 We could then add the `vault_pass_file.enc` to our repository and use Travis CLI to give Travis knowledge about the password to be able to decrypt the `vault_pass_file.enc`. 
 To share the password with travis, we first need to authenticate with Travis CLI.
 
-{% shell %}
+{% include tags/shell-start.html %}
 travis login
-{% endshell %}
+{% include tags/shell-end.html %}
 
 Next, we need to define an encrypted environment variable (in our case we name it `vault_file_pass`) which stores the password.
 
-{% shell %}
+{% include tags/shell-start.html %}
 travis encrypt vault_file_pass=&lt;my-very-strong-password&gt; --add
-{% endshell %}
+{% include tags/shell-end.html %}
 
 The `--add` flag adds the encrypted data to your `env` map inside the `.travis.yml` file. 
 
@@ -229,9 +229,9 @@ Your `.travis.yml` file should now look something like that.
 
 {% gist fishi0x01/4d613f4fb0034b7197a92cd36bd34801 var_encrypted.travis.yml %}
 
-{% hint %}
+{% include tags/hint-start.html %}
 Note, that after running the tests I run `.travis/sensitive_data.sh clean` and `shred vault_pass_file` in the `after_script` section to remove the decrypted flles and the cleartext vault password from the Travis VM. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 As mentioned above, I had trouble using `local_action` within the Travis environment, since it does not properly source the python virtual environment and thus cannot find the `ansible-vault` command. 
 I am still investigating this, but in the meanwhile as a workaround I wrote a script that Travis can use to decrypt the templates before running (and also clean them up after the build is done).

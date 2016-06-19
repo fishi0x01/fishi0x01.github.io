@@ -24,12 +24,12 @@ Lets create a simple program that opens a socket.
 The only thing this program does is creating a socket without binding it to an address. 
 Compiling and running this program gives us:
 
-{% shell %}
+{% include tags/shell-start.html %}
 $ gcc -Wall simple_client.c -o simple_client
 $ ./simple_client
 Socket successfully created
 $
-{% endshell %}
+{% include tags/shell-end.html %}
 
 Now we want to intercept the `socket()` function to change the behavior on each call. 
 For this, we first have to write a shared library that will override the `socket()` function. 
@@ -41,13 +41,13 @@ For this, we first have to write a shared library that will override the `socket
 With the help of `LD_PRELOAD` we can now let our `socket_hook.so` library get loaded before the standard C libraries, meaning the first occurrence of the `socket()` function is in our shared library. 
 This results in the following:
 
-{% shell %}
+{% include tags/shell-start.html %}
 $ gcc -Wall -fPIC -shared socket_hook.c -o socket_hook.so
 $ LD_PRELOAD=./socket_hook.so ./simple_client 
 socket() call intercepted
 Error : Could not create socket
 $
-{% endshell %}
+{% include tags/shell-end.html %}
 
 Please note, that the Error message is due to the fact that we return -1 in our shared library, but our client code expects a non-negative return value. 
 So far, we could override a standard `socket()` call with our own function from our shared library. 
@@ -67,18 +67,18 @@ Hence, in our example `o_socket` can from then on be used to call the original `
 `_GNU_SOURCE` has to be defined in order to be able to use `RTLD_NEXT`. 
 We now have to compile our shared library differently from before:
 
-{% shell %}
+{% include tags/shell-start.html %}
 $ gcc -Wall -fPIC -shared socket_hook.c -o socket_hook.so -ldl
-{% endshell %}
+{% include tags/shell-end.html %}
 
 Using our new shared library gives us the following:
 
-{% shell %}
+{% include tags/shell-start.html %}
 $ LD_PRELOAD=./socket_hook.so ./simple_client 
 socket() call intercepted
 Socket successfully created
 $
-{% endshell %}
+{% include tags/shell-end.html %}
 
 That's it! 
 We have successfully intercepted the socket function and made a call to the original socket library. 

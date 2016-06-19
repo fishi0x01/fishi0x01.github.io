@@ -15,10 +15,10 @@ This is why in this post I will describe how to setup [Jenkins][jenkins-project]
 
 I assume we have a Django project `d_project` at `/srv/www/django/d_project` running in a virtual environment at `/srv/www/django/d_project/py-env`. 
 
-{% hint %}
+{% include tags/hint-start.html %}
 I strongly recommend the use of [virtual python environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/) when working with Django. 
 These can save you from a lot of trouble in case you are having multiple projects on the same server - especially when upgrades and migrations are coming closer!
-{% endhint %}
+{% include tags/hint-end.html %}
 
 ### Installing Jenkins ###
 There are different ways to [install Jenkins][jenkins-install]; here are 2 examples: 
@@ -28,9 +28,9 @@ There are different ways to [install Jenkins][jenkins-install]; here are 2 examp
 
 Consequently, since Jenkins is running within my Tomcat, the Jenkins user is - and in the following I will also assume that it is - `tomcat`.
 
-{% hint %}
+{% include tags/hint-start.html %}
 Please make sure to [secure Jenkins](https://wiki.jenkins-ci.org/display/JENKINS/Securing+Jenkins), especially if it is accessible via Internet!
-{% endhint %}
+{% include tags/hint-end.html %}
 
 ### Apache Configuration ###
 Most likely you will run your Jenkins/Tomcat server behind an Apache Server or something similar. 
@@ -49,10 +49,10 @@ Further, Django projects can be hosted via Apache with [mod_wsgi][modwsgi].
 In case you want to use coverage reports, please install [Violations][jenkins-violations] and [Cobertura][jenkins-cobertura] Plugin in Jenkins with the help of its Plugin Manager. 
 Also, you will need [django-jenkins][django-jenkins] and coverage for your python environment:
 
-{% shell %}
+{% include tags/shell-start.html %}
 (py-env)$ pip install django-jenkins
 (py-env)$ pip install coverage
-{% endshell %}
+{% include tags/shell-end.html %}
 
 In order to use django-jenkins for your project, you have to add `django_jenkins` to your project's `INSTALLED_APPS`. 
 From then on you can execute tests using `python manage.py jenkins` or (with coverage reports) `python manage.py jenkins --enable-coverage`.
@@ -81,10 +81,10 @@ If not, you can manually use Git and you will be asked whether to add the server
 From then on your jenkins user will be able to access the repository.
 * Now, in redmine you can just add the `Jenkins CI` user to any project in which you need a CI.
 
-{% hint %}
+{% include tags/hint-start.html %}
 No matter which Git server/management tool you are using, in any case you need to ensure, that the jenkins user has read permissions to the repositories. 
 If you want Jenkins to merge branches after successful builds/tests, you also need to enable write permissions to the repositories.
-{% endhint %}
+{% include tags/hint-end.html %}
 
 ### Allowing Jenkins to restart Apache ###
 Before we start here, please note that a publicly accessible dev version might lead to security issues! 
@@ -98,10 +98,10 @@ tomcat ALL=NOPASSWD: /usr/sbin/apachectl
 
 This enables our Jenkins user `tomcat` to have root access to `apachectl`. 
 
-{% hint %}
+{% include tags/hint-start.html %}
 Due to security reasons, I recommend to only automatically deploy dev versions on your server if they are not publicly accessible, because dev versions tend to have severe bugs which may put your server in danger! 
 If you only want to deploy your Django project for testing purposes, I recommend to simply rely on Django's built-in test framework, without deploying your project with Apache or a similar server. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 ### Creating a new build job ###
 In your Jenkins UI: 
@@ -119,9 +119,9 @@ In your Jenkins UI:
 Also, you can specify the branches to build - for a more sophisticated git project structure this is very important, but in this post we will simply build the master branch.
 * In **Build Triggers** select **Poll SCM** and define a schedule such as `H/30 * * * *`. 
 This will let Jenkins poll the repository every 30 minutes.
-{% hint %}
+{% include tags/hint-start.html %}
 If you do not like polling, you can also activate **Trigger builds remotely (e.g., from scripts)**, define an authentication token and use Git commit hooks to trigger the resulting build URL whenever a commit to the repository is done.
-{% endhint %}
+{% include tags/hint-end.html %}
 
 * In **Build**, specify a command to run the build/deploy script (e.g. `/srv/www/django/deploy.sh`)
 
@@ -133,11 +133,11 @@ The deploy.sh could look something like this:
 
 Basically this script installs the project's requirements, migrates model changes, lets Apache reload the source files and runs the tests. 
 
-{% hint %}
+{% include tags/hint-start.html %}
 This is a very basic introduction to a Django CI. 
 I recommend a more complex Git branching structure and consequently also a more sophisticated Jenkins branch build configuration for projects involving more than one person. 
 You can configure Jenkins to automatically merge branches whenever a branch passes the build/deploy script without errors - thus you could keep your `dev` branch clean since bugs that do not pass your test suits do not get merged. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 That's it! We now got a working basic Django CI! Happy integrating!
 

@@ -75,10 +75,10 @@ You have to change the keys inside the script in order for it to work on 32-bit 
 This script works for me, but use it at your own risk. 
 I do not guarantee that it works, nor do I give any kinds of support in case it doesn't.
 
-{% hint %}
+{% include tags/hint-start.html %}
 To avoid trouble, ensure that your Firewall is open on the ports designated for DCOM on your system. 
 Also, keep in mind that the DCOM bridge has to be established with administrator credentials in order to have the necessary permissions. 
-{% endhint %}
+{% include tags/hint-end.html %}
 
 Once remote DCOM is enabled, we could use Java to create a DCOM bridge from a client (could be Linux/Mac/Windows...) to this machine. 
 This is handy in case we want to remotely retrieve performance counters or listen for WMI events. 
