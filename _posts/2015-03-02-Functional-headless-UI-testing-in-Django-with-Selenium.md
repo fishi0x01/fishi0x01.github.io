@@ -51,9 +51,9 @@ I've had very good experiences with Selenium in the past.
 It has a great community and quick fixes for new browser versions. 
 Lucky for us, Selenium also comes for Python and can be installed via pip: 
 
-{% include tags/hint-start.html %}
+{% include tags/shell-start.html %}
 (py-env)$ pip install selenium
-{% include tags/hint-end.html %}
+{% include tags/shell-end.html %}
 
 ### An Example Test ###
 Now that we have everything installed/setup, lets take a look at a very basic "Hello World!" example test case for a basic html test website, which is returned when calling /test/example on our Django server. 
