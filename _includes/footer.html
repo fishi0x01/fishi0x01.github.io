@@ -1,0 +1,39 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <img src="/content-images/mm.png" style="max-width: 200px;"/>
+<!--
+        <ul class="contact-list">
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        </ul>
+-->
+      </div>
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          <li>
+            {% include icon-stackoverflow.html userhash=site.stackoverflow_userhash username=site.stackoverflow_username %}
+          </li>
+          <li>
+            {% include icon-linkedin.html username=site.linkedin_username %}
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description }}</p>
+      </div>
+    </div>
+
+    <p style="font-size: small; background-color: #E8E8E8; text-align: center; color: #777">Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://pages.github.com/">GitHub Pages</a></p>
+
+  </div>
+
+</footer>

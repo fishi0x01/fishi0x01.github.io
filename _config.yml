@@ -1,0 +1,26 @@
+# Site settings
+title: Karl Fischer
+email: fishi0x01@gmail.com
+description: > 
+  A tech-blog about programming, automation and deployment.
+
+baseurl: "" 
+url: "http://fishi.devatil.com" 
+
+# Media
+github_username:  fishi0x01
+hackerrank_username: fishi0x01
+linkedin_username: fishi
+stackoverflow_username: fishi
+stackoverflow_userhash: 4478420
+
+# Build settings
+markdown: kramdown
+
+gems:
+  - jekyll-gist
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-gist
+  - jekyll-redirect-from
