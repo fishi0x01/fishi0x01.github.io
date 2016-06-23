@@ -160,7 +160,7 @@ Also remember that our current approach is only valid for \\(m\\) whose prime fa
 
 Now we are also able to compute large binomial coefficients modulo numbers whose prime factorization is square-free. 
 
-## 4. \(m\) has prime factors with [multiplicity][wiki-multiplicity] higher than 1 ##
+## 4. \\(m\\) has prime factors with [multiplicity][wiki-multiplicity] higher than 1 ##
 
 Finally, lets have a look at all the remaining possible modulo numbers, namely those containing prime factors with a [multiplicity][wiki-multiplicity] higher than 1. 
 For that purpose we can use Andrew Granville's [generalization of Lucas' Theorem][andrew-coeff]. 
