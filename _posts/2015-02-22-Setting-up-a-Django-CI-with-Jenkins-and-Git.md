@@ -4,6 +4,7 @@ title:  "Setting up a Django CI with Jenkins and Git"
 date:   2015-02-22 19:20:48 +0000
 modified: 2015-06-18 02:03:11 +0000 
 comments: true
+disqus_id: 5
 permalink: weblog/2015/02/22/setting-django-ci-jenkins-and-git/
 redirect_from:
   - /weblog/6/

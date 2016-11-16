@@ -4,6 +4,7 @@ title:  "Measuring Bandwidth and Round-Trip Time of a TCP Connection inside the 
 date:   2015-04-12 21:48:31 +0000
 modified: 2015-06-18 02:04:17 +0000 
 comments: true
+disqus_id: 7
 permalink: weblog/2015/04/12/measuring-bandwidth-and-round-trip-time-tcp-connection-inside-application-layer/
 redirect_from:
   - /weblog/8/

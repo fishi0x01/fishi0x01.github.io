@@ -4,6 +4,7 @@ title:  "Functional headless UI testing in Django with Selenium"
 date:   2015-03-02 23:43:47 +0000
 modified: 2015-06-18 02:04:03 +0000 
 comments: true
+disqus_id: 6
 permalink: weblog/2015/03/02/functional-headless-ui-testing-django-selenium/
 redirect_from:
   - /weblog/7/

@@ -4,6 +4,7 @@ title:  "Ansible role structuring"
 date:   2016-06-02 15:47:09 +0000
 modified: 2016-06-03 00:18:00 +0000 
 comments: true
+disqus_id: 12
 permalink: weblog/2016/06/02/ansible-role-structuring/
 redirect_from:
   - /weblog/D/

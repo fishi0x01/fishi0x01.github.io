@@ -4,6 +4,7 @@ title:  "Another Python BrainF*** Interpreter"
 date:   2015-06-15 22:21:12 +0000
 modified: 2015-06-18 02:06:58 +0000 
 comments: true
+disqus_id: 9
 permalink: weblog/2015/06/15/another-python-bf-interpreter/
 redirect_from:
   - /weblog/A/

@@ -4,6 +4,7 @@ title:  "A pure Java DCOM Bridge with j-interop"
 date:   2015-01-21 01:41:43 +0000
 modified: 2015-06-18 02:03:29 +0000 
 comments: true
+disqus_id: 2
 permalink: weblog/2015/01/21/pure-java-dcom-bridge-j-interop/
 redirect_from:
   - /weblog/3/

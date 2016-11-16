@@ -4,6 +4,7 @@ title:  "Enabling DCOM for Windows 7, 8 and Server 2012"
 date:   2015-01-16 03:55:01 +0000
 modified: 2015-06-18 02:03:21 +0000 
 comments: true
+disqus_id: 1
 permalink: /weblog/2015/01/16/enabling-dcom-windows-7-8-and-server-2012/
 redirect_from: 
   - /weblog/2/
