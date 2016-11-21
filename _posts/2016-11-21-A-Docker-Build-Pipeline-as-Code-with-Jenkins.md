@@ -122,7 +122,7 @@ The `Dockerfile` and `docker-entrypoint.sh` may contain the following:
 
 {% include tags/hint-start.html %}
 **IMPORTANT:** By default the resulting container will run as `root`. This should be avoided if possible, since the `root` 
-user inside the container has the same uuid as the the hosts `root` user, which is potentially dangerous in case the container gets compromised. 
+user inside the container has the same uuid as the host's `root` user, which is potentially dangerous in case the container gets compromised. 
 {% include tags/hint-end.html %}
 
 {% gist fishi0x01/9c8d39d7a79cbe454f87c4745897d561 docker-entrypoint.sh %}
