@@ -65,6 +65,7 @@ Imagine you want to build a feature branch, but something in your pipeline chang
 You would need to push a new commit containing that change on the feature branch. 
 This is especially bad, if you want to build a tag, i.e., a specific commit. 
 Keeping the pipeline code on a separate branch helps avoiding such a conflict. 
+You could also use the [Multibranch Pipeline Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Multibranch+Plugin) to better decouple your pipeline definitions.
 An even cleaner approach would be to put the pipeline code into a different repository, but in this post 
 we are satisfied with a separate branch.
 The repositorie's dir structure may now look something like this:
