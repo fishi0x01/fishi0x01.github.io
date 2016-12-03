@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Projects
-permalink: /projects/
+title: "[ A ]"
+permalink: /arr/
 ---
 
-A list of some projects I worked on:
+Some companies I had the honor to work with during my time at Project A:
 
 * [HiMate](https://himate.org)
 
