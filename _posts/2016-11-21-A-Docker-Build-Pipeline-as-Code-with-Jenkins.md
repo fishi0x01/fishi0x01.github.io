@@ -2,7 +2,7 @@
 layout: post
 title: "A Docker Build Pipeline as Code with Jenkins"
 date: 2016-11-21 19:25:09 +0000
-modified: 2016-11-21 19:25:09 +0000 
+modified: 2017-01-21 13:12:05 +0000 
 comments: true
 disqus_id: 13
 permalink: weblog/2016/11/20/docker-build-pipeline-as-code-jenkins/
@@ -60,14 +60,21 @@ For our Java project, let us build a pipeline which handles the following steps:
 * Send notifications to a Slack channel
 
 To get started, we first create a `build.groovy` file inside our Java code repository, ideally on a new branch, which we call `jenkins`. 
-The reason why we put it on a separate branch is to decouple the app code from the pipeline code. 
+
+{% include tags/hint-start.html %}
+**NOTE:** Some Plugins, such as the [Multibranch Pipeline Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Multibranch+Plugin) 
+require that the pipeline code is in a single file called `Jenkinsfile` in the repositorie's root. 
+{% include tags/hint-end.html %}
+
+The reason why we put the `build.groovy` on a separate branch is to decouple the app code from the pipeline code. 
 Imagine you want to build a feature branch, but something in your pipeline changed. 
-You would need to push a new commit containing that change on the feature branch. 
-This is especially bad, if you want to build a tag, i.e., a specific commit. 
-Keeping the pipeline code on a separate branch helps avoiding such a conflict. 
-You could also use the [Multibranch Pipeline Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Multibranch+Plugin) to better decouple your pipeline definitions.
-An even cleaner approach would be to put the pipeline code into a different repository, but in this post 
-we are satisfied with a separate branch.
+You would need to push a new commit with that pipeline change on the feature branch. 
+This is especially bad, if you want to build a specific commit, e.g., a tag, since that would require you to re-tag. 
+On the other hand this approach adds more complexity to your project, as an extra branch for pipelines may not be 
+as intuitive as keeping the pipeline defintions with the rest of your code in the same branch. 
+A better approach would be to use the [Multibranch Pipeline Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Multibranch+Plugin), also because it 
+is a requirement to get the most out of the new Jenkins UI [Blue Ocean](https://wiki.jenkins-ci.org/display/JENKINS/Blue+Ocean+Plugin).
+However, in this post we are satisfied with a separate branch. 
 The repositorie's dir structure may now look something like this:
 
 ```
