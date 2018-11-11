@@ -10,7 +10,7 @@ I am currently working as an Information Security Engineer at the [HPS Gesundhei
 
 Right now I am focusing on Information Security, i.e., identifying and implementing security requirements for modern IT companies (specifically [ISO27001](https://www.iso.org/isoiec-27001-information-security.html)/[BSI](https://www.bsi.bund.de/EN/Topics/ITGrundschutz/itgrundschutz_node.html)). 
 
-Before that my main focus was on Platform architecture and SRE. I dealt with different kinds of automation in cloud and bare metal infrastructures (for both, micro service and monolith architectures). This included automating the rollout of cloud infrastructures, provisioning bare metal servers with configuration management tools and building continuous delivery pipelines for containerized or packaged applications. 
+Before that my main focus was on platform architecture and SRE/DevOps. I dealt with different kinds of automation in cloud and bare metal infrastructures (for both, micro service and monolith architectures). This included automating the rollout of cloud infrastructures, provisioning bare metal servers with configuration management tools and building continuous delivery pipelines for containerized or packaged applications. 
 
 In general I am always happy if I get the chance to experiment with new technologies and explore new fields.
 

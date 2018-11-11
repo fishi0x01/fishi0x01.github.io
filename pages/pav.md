@@ -6,7 +6,7 @@ permalink: /arr/
 
 Some companies I had the honor to work with during my time at Project A:
 
-* [Kfzteil24](https://kfzteile24.at)
+* [Kfzteile24](https://kfzteile24.at)
 
 * [HiMate](https://himate.org)
 
