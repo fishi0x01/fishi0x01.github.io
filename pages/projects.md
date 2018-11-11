@@ -1,13 +1,15 @@
 ---
 layout: page
-title: "[ A ]"
+title: "[ PAV ]"
 permalink: /arr/
 ---
 
 Some companies I had the honor to work with during my time at Project A:
 
+* [Kfzteil24](https://kfzteile24.at)
+
 * [HiMate](https://himate.org)
 
-* [JunoMedical](https://junomedical.com)
+* [QunoMedical](https://qunomedical.com)
 
 * [CrossEngage](http://crossengage.io)
