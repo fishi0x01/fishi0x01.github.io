@@ -3,7 +3,7 @@ layout: post
 title: "Jenkins-As-Code Part I | Initial Setup"
 date: 2019-01-06 14:45:00 +0000
 modified: 2019-01-06 14:45:00 +0000 
-comments: false
+comments: true
 disqus_id: 15
 permalink: weblog/2019/01/06/jenkins-as-code-part-1/
 redirect_from:
