@@ -40,7 +40,7 @@ shared-library
 │   │   ├── timezone.groovy
 │   │   ├── baseURL.groovy
 │   │   ├── globalEnvVars.groovy
-│   │   ├── globalSharedPipelines.groovy
+│   │   ├── globalSharedLibrary.groovy
 │   │   └── slaves.groovy
 │   ├── init
 │   │   └── ConfigurationAndSeedingPipeline.groovy
@@ -57,6 +57,7 @@ secret IDs (e.g., ClientID and ClientSecret from OAuth Apps).
 We can mount the credentials as files into our docker container, but we still need 
 to read them into the internal Jenkins credential store. 
 
+*credentials.groovy:*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 credentials.groovy %}
 
 The above script adds Slack, Github CI User and HashiCorp Vault tokens from local files 
@@ -77,6 +78,7 @@ for our Github organization at https://github.com/organizations/<my-org>/setting
 This will give us a `client_id` and a `client_secret`, which we have to pass to Jenkins
 in order to connect with Github to verify the user's identity.
 
+*githubOAuth.groovy:*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 githubOAuth.groovy %}
 
 The above script configures the [Github OAuth Plugin][plugin-github-oauth] and 
@@ -88,6 +90,7 @@ Github team `my_team_name`.
 A [global shared library][global-shared-library] is usable by every job by adding a simple 
 `@Pipeline('<lib-name>')` annotation (to the `Jenkinsfile`). 
 
+*globalSharedLibrary.groovy:*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 globalSharedLibrary.groovy %}
 
 The above script configures `git@github.com:<my-org>/<my-shared-library>.git` as a global 
@@ -106,6 +109,7 @@ Jenkins `.css` file for this plugin.
 We should place the generated `.css` file in the `userContent` directory of Jenkins 
 in order to be publicly available.
 
+*theme.groovy*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 theme.groovy %}
 
 The above script configures the simple theme plugin to use our generated `.css` file.
@@ -114,6 +118,7 @@ The above script configures the simple theme plugin to use our generated `.css` 
 
 It is nice to get deploy or build messages send directly to slack.
 
+*slack.groovy:*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 slack.groovy %}
 
 The above script configures the slack plugin. 
@@ -123,6 +128,7 @@ This enables us to use `slackSend` calls in our pipelines.
 
 The base URL setting is very important as it is used to generate the URLs within Jenkins.
 
+*baseURL.groovy:*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 baseURL.groovy %}
 
 The above script configures the base URL to our domain.
@@ -131,6 +137,7 @@ The above script configures the base URL to our domain.
 
 Obviously a proper timezone setting is nice in order to not be confused by the build times.
 
+*timezone.groovy:*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 timezone.groovy %}
 
 ### GitHub
@@ -140,6 +147,7 @@ However, they do not work with classic deploy keys.
 If you host your projects on Github, then an easy way to get your multibranch pipelines 
 running is by using the [Github Plugin][plugin-github].
 
+*github.groovy:*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 github.groovy %}
 
 The above script configures the Github Plugin to connect to Github with a CI user's token. 
@@ -151,6 +159,7 @@ The SSHD setting might become important for you if you try to trigger jobs from 
 line on the jenkins master. We will need it in a later part of this series when we try 
 to create a pipeline to bootstrap slaves in different cloud providers.
 
+*sshd.groovy:*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 sshd.groovy %}
 
 The above script configures the SSHD port of the Jenkins master.
@@ -160,6 +169,7 @@ The above script configures the SSHD port of the Jenkins master.
 Global environment variables are visible to every build. 
 That way some general settings can be made visible to all pipelines.
 
+*globalEnvVars.groovy:*
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 globalEnvVars.groovy %}
 
 The above script configures global environment variables.

@@ -165,7 +165,7 @@ shared-library
 │   │   ├── timezone.groovy
 │   │   ├── baseURL.groovy
 │   │   ├── globalEnvVars.groovy
-│   │   ├── globalSharedPipelines.groovy
+│   │   ├── globalSharedLibrary.groovy
 │   │   └── slaves.groovy
 │   ├── init
 │   │   └── ConfigurationAndSeedingPipeline.groovy
