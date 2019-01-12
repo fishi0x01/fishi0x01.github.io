@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jenkins-As-Code Part II | Configuration"
+title: "Jenkins-as-Code Part II | Configuration"
 date: 2019-01-12 14:30:00 +0000
 modified: 2019-01-12 14:30:00 +0000 
 comments: true
@@ -11,7 +11,7 @@ redirect_from:
 categories: jenkins
 ---
 
-This is the 2nd part of the Jenkins-As-Code series. 
+This is the 2nd part of the Jenkins-as-Code series. 
 In this part we will focus on configuring Jenkins through code. 
 The goal is to avoid manual configuration in the UI and instead 
 leverage configuration scripts in a central Github repository which 

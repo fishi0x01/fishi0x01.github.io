@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jenkins-As-Code Part I | Initial Setup"
+title: "Jenkins-as-Code Part I | Initial Setup"
 date: 2019-01-06 14:45:00 +0000
 modified: 2019-01-12 14:30:00 +0000 
 comments: true
@@ -44,7 +44,7 @@ Finally, we will have a closer look at contents of that central shared library.
 
 In order to avoid confusion it is very important to define the different layers and terms which will be used throughout this series.
 
-#### Jenkins-As-Code
+#### Jenkins-as-Code
 Jenkins-as-code describes an approach to codify and automate every layer of Jenkins. 
 In order to achieve its goal the approach leverages jobDSL, configuration and pipeline definition scripts. 
 
