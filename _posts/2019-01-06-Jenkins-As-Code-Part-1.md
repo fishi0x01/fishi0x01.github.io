@@ -2,7 +2,7 @@
 layout: post
 title: "Jenkins-As-Code Part I | Initial Setup"
 date: 2019-01-06 14:45:00 +0000
-modified: 2019-01-06 14:45:00 +0000 
+modified: 2019-01-12 14:30:00 +0000 
 comments: true
 disqus_id: 15
 permalink: weblog/2019/01/06/jenkins-as-code-part-1/
@@ -16,6 +16,11 @@ I am calling that approach [jenkins-as-code](#jenkins-as-code).
 The goal is to configure every aspect of Jenkins and its pipelines from a central git repository.
 We will leverage groovy scripting, jobDSL and [shared libraries][shared-libraries] to not only codify the build/deploy pipelines ([pipeline-as-code][pipeline-as-code]), but to also bootstrap and configure Jenkins from scratch (e.g., credentials, authorization, theme and job setup).
 <!--more-->
+
+I recently started to move away from my SRE/DevOps position to dive deeper into the world of 
+Information Security Engineering. 
+This series is a good way to share some knowledge about Jenkins and at the same time 
+have a manual for myself to be able to setup a Jenkins in a pure -as-code fashion.
 
 It is usually a good idea to have as much as possible setup in an as-code approach, because it offers:
 - clear definitions and automation, i.e., clear state definition and reproducibility 
@@ -76,7 +81,7 @@ That pipeline executes the jobDSL scripts in order to create all job interfaces.
 
 Now that we have covered some basics, let us begin with the hands-on work and create a docker image for our Jenkins. 
 
-### Structure
+### Directory Structure
 
 We will use the following directory structure:
 
@@ -143,7 +148,7 @@ When this interface is triggered, it will load the central shared library and ru
 
 Lets have a look now at how our shared jenkins library looks like.
 
-### Structure
+### Directory Structure
 
 We will use the following directory structure for our shared library:
 
@@ -153,7 +158,13 @@ shared-library
 │   ├── config
 │   │   ├── auth.groovy
 │   │   ├── credentials.groovy
-│   │   ├── generalSettings.groovy
+│   │   ├── slack.groovy
+│   │   ├── theme.groovy
+│   │   ├── sshd.groovy
+│   │   ├── github.groovy
+│   │   ├── timezone.groovy
+│   │   ├── baseURL.groovy
+│   │   ├── globalEnvVars.groovy
 │   │   ├── globalSharedPipelines.groovy
 │   │   └── slaves.groovy
 │   ├── init
@@ -182,10 +193,11 @@ We now have a pipeline definition for configuration and seeding.
 That pipeline defintion is triggered by an initial job interface for configuration and seeding.
 The initial job interface is bootstrapped by our docker image (`init.groovy.d`). 
 
-The next part of the jenkins-as-code series will focus on the configuration scripts, e.g., 
+The [next part][next-part] of the jenkins-as-code series will focus on the configuration scripts, e.g., 
 OAuth authentication, theming, slack and credentials.
 
 
+[next-part]: /weblog/2019/01/12/jenkins-as-code-part-2/
 [travis]: https://travis-ci.com/
 [circleci]: https://circleci.com/
 [jobdsl-plugin]: https://github.com/jenkinsci/job-dsl-plugin
