@@ -74,7 +74,7 @@ We build and deploy services with it, so we want to limit access.
 As we host our [shared libray][vocabular-shared-library] on Github we could use 
 [Github OAuth][github-oauth] to easily authenticate users. 
 In order for that to work we first need to setup an OAuth Application 
-for our Github organization at https://github.com/organizations/<my-org>/settings/applications.
+for our Github organization at https://github.com/organizations/\<my-org\>/settings/applications.
 This will give us a `client_id` and a `client_secret`, which we have to pass to Jenkins
 in order to connect with Github to verify the user's identity.
 
@@ -100,7 +100,7 @@ shared library which can be used by every job.
 
 Lets continue with the configuration of some convenient plugins.
 
-### Theme
+#### Theme
 
 Lets spice up our Jenkins with a custom UI. 
 We can use the [Simple Theme Plugin][plugin-simple-theme] for that. 
@@ -114,7 +114,7 @@ in order to be publicly available.
 
 The above script configures the simple theme plugin to use our generated `.css` file.
 
-### Slack
+#### Slack
 
 It is nice to get deploy or build messages send directly to slack.
 
@@ -124,7 +124,7 @@ It is nice to get deploy or build messages send directly to slack.
 The above script configures the slack plugin. 
 This enables us to use `slackSend` calls in our pipelines.
 
-### Base URL
+#### Base URL
 
 The base URL setting is very important as it is used to generate the URLs within Jenkins.
 
@@ -133,14 +133,14 @@ The base URL setting is very important as it is used to generate the URLs within
 
 The above script configures the base URL to our domain.
 
-### Timezone
+#### Timezone
 
 Obviously a proper timezone setting is nice in order to not be confused by the build times.
 
 **timezone.groovy:**
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 timezone.groovy %}
 
-### GitHub
+#### GitHub
 
 [MultiBranch Pipelines][multibranch-pipeline] are a nice way to build projects. 
 However, they do not work with classic deploy keys. 
@@ -153,7 +153,7 @@ running is by using the [Github Plugin][plugin-github].
 The above script configures the Github Plugin to connect to Github with a CI user's token. 
 Of course you have to create that CI user first and give it access to your Github organization. 
 
-### SSHD
+#### SSHD
 
 The SSHD setting might become important for you if you try to trigger jobs from the command 
 line on the jenkins master. We will need it in a later part of this series when we try 
@@ -164,7 +164,7 @@ to create a pipeline to bootstrap slaves in different cloud providers.
 
 The above script configures the SSHD port of the Jenkins master.
 
-### Global Environment Variables
+#### Global Environment Variables
 
 Global environment variables are visible to every build. 
 That way some general settings can be made visible to all pipelines.
