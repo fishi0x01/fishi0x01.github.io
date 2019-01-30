@@ -1,0 +1,53 @@
+I hereby claim:
+
+  * I am an admin of https://fishi.devtail.io
+  * I am fishi (https://keybase.io/fishi) on keybase.
+  * I have a public key ASAJZDqCC63ash9grQadaoo1nAzw8uhByx8JRuj2nFR5Hgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012009643a820baddab21f60ad069d6a8a359c0cf0f2e841cb1f0946e8f69c54791e0a",
+      "host": "keybase.io",
+      "kid": "012009643a820baddab21f60ad069d6a8a359c0cf0f2e841cb1f0946e8f69c54791e0a",
+      "uid": "9301a5cc76ddd61df9ab783d49454a19",
+      "username": "fishi"
+    },
+    "merkle_root": {
+      "ctime": 1548853529,
+      "hash": "629bccc37551b3d3a59fec1f217cffa86923238d7d8ffc130fa1b55e3b726b438f0097ad74873e50aa90547511a34fd3651d888f5d78f41e74773a9dfcf
+70c18",
+      "hash_meta": "71ecec8b6a16ddfa56abb6b6b0bae908c66d931953d94949b8b8d3b17587e8ee",
+      "seqno": 4661867
+    },
+    "service": {
+      "entropy": "E70lnPSP1SbGgQ5V+WkNdf42",
+      "hostname": "fishi.devtail.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.0.0"
+  },
+  "ctime": 1548853554,
+  "expire_in": 504576000,
+  "prev": "1a46258944a1e2d51e28287386d24db00a7d1f324348fcb43407016f528c7074",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgCWQ6ggut2rIfYK0GnWqKNZwM8PLoQcsfCUbo9pxUeR4Kp3BheWxvYWTESpcCBsQgGkYliUSh4tUeKChzhtJNsAp9Hz
+JDSPy0NAcBb1KMcHTEIEtxOnZAJZe5v6qDQXy1Jt8onJ1ex+raVeOOWdIbLGRYAgHCo3NpZ8RA0H5n+zV6g1gyLfveLnCwxSTcN9L5wU505ycsdybK4VIf4pZy1c+98zfCwvbni3MC
+epcE4HefvmK+WM00oMrkD6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIA9sAN2qfTuaWaYxwESJ5+UxLhNUKnJfHLN+OksBzJ8Vo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/fishi
