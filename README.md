@@ -3,6 +3,8 @@ My Jekyll blog frontend. The content is maintained in [this repository](https://
 
 ## Install locally
 ```
+gem install bundler --user-install
+rm -f Gemfile.lock
 bundle install --path .bundle
 ```
 
