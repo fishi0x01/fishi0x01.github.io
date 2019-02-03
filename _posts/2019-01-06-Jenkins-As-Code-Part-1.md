@@ -25,7 +25,7 @@ have a manual for myself to be able to setup a Jenkins in a pure \*-as-code fash
 This is what we want to have at the end of this series: 
 
 <br/>
-<img src="/content-images/jenkins-bootstrap.gif" alt="Demo" style="display: block; margin-left: auto; margin-right: auto;">
+<img src="/content-images/jenkins-bootstrap-700px.gif" alt="Demo" style="display: block; margin-left: auto; margin-right: auto;">
 <br/>
 
 Every aspect of what is shown here can be found in full context in the [jenkins-as-code Github repository][jenkins-as-code-github-repo]. 
