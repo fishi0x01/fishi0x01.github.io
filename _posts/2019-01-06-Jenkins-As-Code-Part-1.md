@@ -2,7 +2,7 @@
 layout: post
 title: "Jenkins-as-Code Part I | Initial Setup"
 date: 2019-01-06 14:45:00 +0000
-modified: 2019-01-12 14:30:00 +0000 
+modified: 2019-02-03 09:30:00 +0000 
 comments: true
 disqus_id: 15
 permalink: weblog/2019/01/06/jenkins-as-code-part-1/
@@ -20,9 +20,17 @@ We will leverage groovy scripting, jobDSL and [shared libraries][shared-librarie
 I recently started to move away from my SRE/DevOps position to dive deeper into the world of 
 Information Security Engineering. 
 This series is a good way to share some knowledge about Jenkins and at the same time 
-have a manual for myself to be able to setup a Jenkins in a pure -as-code fashion.
+have a manual for myself to be able to setup a Jenkins in a pure \*-as-code fashion. 
 
-It is usually a good idea to have as much as possible setup in an as-code approach, because it offers:
+This is what we want to have at the end of this series: 
+
+<br/>
+<img src="/content-images/jenkins-bootstrap.gif" alt="Demo" style="display: block; margin-left: auto; margin-right: auto;">
+<br/>
+
+Every aspect of what is shown here can be found in full context in the [jenkins-as-code Github repository][jenkins-as-code-github-repo]. 
+
+It is usually a good idea to have as much as possible setup in an \*-as-code approach, because it offers:
 - clear definitions and automation, i.e., clear state definition and reproducibility 
 - rollouts from central servers (offers audit logs)
 - a workflow like common software development, i.e., testing and reviewing is easier
@@ -203,3 +211,4 @@ OAuth authentication, theming, slack and credentials.
 [jobdsl-plugin]: https://github.com/jenkinsci/job-dsl-plugin
 [pipeline-as-code]: https://jenkins.io/solutions/pipeline/
 [shared-libraries]: https://jenkins.io/doc/book/pipeline/shared-libraries/
+[jenkins-as-code-github-repo]: https://github.com/devtail/jenkins-as-code
