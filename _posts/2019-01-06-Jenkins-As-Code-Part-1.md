@@ -2,7 +2,7 @@
 layout: post
 title: "Jenkins-as-Code Part I | Initial Setup"
 date: 2019-01-06 14:45:00 +0000
-modified: 2019-02-03 09:30:00 +0000 
+modified: 2019-02-09 09:30:00 +0000 
 comments: true
 disqus_id: 15
 permalink: weblog/2019/01/06/jenkins-as-code-part-1/
@@ -58,6 +58,7 @@ In order to achieve its goal the approach leverages jobDSL, configuration and pi
 
 #### Job Interface
 A job interface describes the job in the Jenkins UI. 
+Deep down a job interface is xml code on the Jenkins master instance, usually found at `${JENKINS_HOME}/jobs`.
 We use a job interface to declare input parameters and to trigger the job. 
 Preferably, a job interface is created using the Jenkins [jobDSL plugin][jobdsl-plugin].
 When a job is triggered it loads the pipeline definition.

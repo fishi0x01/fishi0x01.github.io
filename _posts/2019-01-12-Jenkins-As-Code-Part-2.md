@@ -2,7 +2,7 @@
 layout: post
 title: "Jenkins-as-Code Part II | Configuration"
 date: 2019-01-12 14:30:00 +0000
-modified: 2019-01-12 14:30:00 +0000 
+modified: 2019-02-09 10:30:00 +0000 
 comments: true
 disqus_id: 16
 permalink: weblog/2019/01/12/jenkins-as-code-part-2/
@@ -140,6 +140,16 @@ Obviously a proper timezone setting is nice in order to not be confused by the b
 **timezone.groovy:**
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 timezone.groovy %}
 
+#### User Public Keys
+
+We can add public keys for users.
+
+**user-public-keys.groovy:**
+{% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 user-public-keys.groovy %}
+
+Adding a public key to a user is useful if you must interact with jenkins via [jenkins-cli][jenkins-cli]. 
+In my experience Jenkins CLI works best when used with the `-ssh` option. 
+
 #### GitHub
 
 [MultiBranch Pipelines][multibranch-pipeline] are a nice way to build projects. 
@@ -199,8 +209,7 @@ which uses our shared library.
 We can change a configuration by pushing the change to the shared library and running 
 the pre-baked configuration and seeding pipeline in Jenkins. 
 
-In the next part of this series we will have a look at managing slaves on demand in multiple 
-cloud providers at the same time.
+In the [next part][next-part] of this series we will have a quick look at Jenkins JobDSL plugin for job interfaces as-code.
 
 [plugin-configuration-as-code]: https://plugins.jenkins.io/configuration-as-code
 [plugin-github-oauth]: https://plugins.jenkins.io/github-oauth
@@ -214,3 +223,5 @@ cloud providers at the same time.
 [vocabular-configuration-script]: /weblog/2019/01/06/jenkins-as-code-part-1/#configuration-script
 [vocabular-seeding]: /weblog/2019/01/06/jenkins-as-code-part-1/#seeding
 [part-one]: /weblog/2019/01/06/jenkins-as-code-part-1/
+[jenkins-cli]: https://jenkins.io/doc/book/managing/cli/
+[next-part]: /weblog/2019/02/09/jenkins-as-code-part-3/

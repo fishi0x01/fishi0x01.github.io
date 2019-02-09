@@ -13,6 +13,7 @@ hackerrank_username: fishi0x01
 linkedin_username: fishi
 hackerrank_username: fishi0x01
 keybaseio_username: fishi
+hashnode_username: fishi0x01
 stackoverflow_username: fishi
 stackoverflow_userhash: 4478420
 
@@ -21,7 +22,7 @@ markdown: kramdown
 excerpt_separator: "<!--more-->"
 github: [metadata]
 
-gems:
+plugins:
   - jekyll-gist
   - jekyll-redirect-from
 
