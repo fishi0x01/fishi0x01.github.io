@@ -2,7 +2,7 @@
 layout: post
 title: "Jenkins-as-Code Part I | Initial Setup"
 date: 2019-01-06 14:45:00 +0000
-modified: 2019-02-09 09:30:00 +0000 
+modified: 2019-03-03 12:30:00 +0000 
 comments: true
 disqus_id: 15
 permalink: weblog/2019/01/06/jenkins-as-code-part-1/
@@ -68,7 +68,12 @@ A pipeline definition is a groovy script which is loaded by a job interface when
 Those groovy scripts are also known as pipeline-as-code - an approach also known from cloud CIs like Travis or CircleCI.
 
 #### Configuration Script
-A configuration script is a groovy script, which interacts with the Jenkins eco-system to configure Jenkins and its plugins.
+A configuration script is a system groovy script, which interacts with the Jenkins eco-system to configure Jenkins and its plugins.
+
+#### CasC
+\[C\]onfiguration \[as\] [C]ode refers to the [Configuration-as-Code Plugin][casc-plugin]. 
+Rather than writing configuration scripts, this plugin allows to define your configuration 
+in a simple .yaml syntax. 
 
 #### JobDSL Script
 A jobDSL script is a groovy script which programmatically describes job interfaces. 
@@ -81,10 +86,10 @@ That pipeline executes the jobDSL scripts in order to create all job interfaces.
 ### Layers and their Interaction
 
 **Layers in jenkins-as-code:**
-<img src="/content-images/jenkins-as-code-layers.png" alt="Layers in jenkins-as-code" style="display: block; margin-left: auto; margin-right: auto;">
+<img src="/content-images/jenkins-as-code-layers.png" alt="Layers in jenkins-as-code" style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
 
 **Interaction between the layers:**
-<img src="/content-images/jenkins-as-code-layers-interaction.png" alt="Layer interaction in jenkins-as-code" style="display: block; margin-left: auto; margin-right: auto;">
+<img src="/content-images/jenkins-as-code-layers-interaction.png" alt="Layer interaction in jenkins-as-code" style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
 
 ## Jenkins Docker Image
 
@@ -213,3 +218,4 @@ OAuth authentication, theming, slack and credentials.
 [pipeline-as-code]: https://jenkins.io/solutions/pipeline/
 [shared-libraries]: https://jenkins.io/doc/book/pipeline/shared-libraries/
 [jenkins-as-code-github-repo]: https://github.com/devtail/jenkins-as-code
+[casc-plugin]: https://plugins.jenkins.io/configuration-as-code
