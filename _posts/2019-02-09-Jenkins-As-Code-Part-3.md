@@ -2,7 +2,7 @@
 layout: post
 title: "Jenkins-as-Code Part III | JobDSL"
 date: 2019-02-09 10:30:00 +0000
-modified: 2019-02-09 10:30:00 +0000 
+modified: 2019-03-10 12:00:00 +0000 
 comments: true
 disqus_id: 17
 permalink: weblog/2019/02/09/jenkins-as-code-part-3/
@@ -18,6 +18,7 @@ However, the [JobDSL plugin][job-dsl-plugin] offers a more convenient and clean 
 
 There are already quite a lot of tutorials and code snippets about the JobDSL plugin all over the web, so this will be a rather short post. 
 I post this merely for the sake of completion as without JobDSL, Jenkins is not fully as-code.
+The complete code can be found in this [demo repo][jenkins-as-code-github-repo].
 
 ## JobDSL Introduction
 
@@ -66,3 +67,4 @@ We created a simple DSL for multibranch pipeline job interfaces of different pro
 [previous-part]: /weblog/2019/01/12/jenkins-as-code-part-2/
 [job-dsl-public-doc]: https://jenkinsci.github.io/job-dsl-plugin/
 [job-dsl-playground]: http://job-dsl.herokuapp.com/
+[jenkins-as-code-github-repo]: https://github.com/devtail/jenkins-as-code

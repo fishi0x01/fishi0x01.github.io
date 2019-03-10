@@ -24,6 +24,7 @@ We now focus on the components of that pipeline, i.e.,
 running the [CasC][vocabular-casc] plugin, 
 executing [configuration scripts][vocabular-configuration-script] 
 and [seeding][vocabular-seeding] job interfaces. 
+The complete code can be found in this [demo repo][jenkins-as-code-github-repo].
 
 ## Directory Layout
 
@@ -63,6 +64,15 @@ The following CasC file configures Security, GitHub, OAuth, Slack, Themes, Agent
 **jenkins.yaml:**
 {% gist fishi0x01/63ce90a4e5b24aa0297aa69622d8ca8f jenkins.yaml %}
 
+Secrets are described as `${secret}`. As of writing this article, secrets in CasC can be loaded 
+from environment variables, files or [HashiCorp Vault][hashi-vault] paths. 
+In this post's [demo repo][jenkins-as-code-github-repo] we use files as secret sources. 
+The path to the secret files is pre-baked in the Dockerfile as `ENV SECRETS="/var/jenkins_home/"`. 
+A secret like `${jenkins-ssh-keys/ssh-agent-access-key}` is then loaded from CasC at
+`/var/jenkins_home/jenkins-ssh-keys/ssh-agent-access-key`. 
+However, I am a big fan of HashiCorp's Vault. Whenever possible, I use it as a secret source, but 
+that is out of scope of this blog post. To setup CasC with Vault, consult their [README][casc-readme]. 
+
 ## Configuration Scripts
 
 CasC does the heavy lifting of our configuration work. However, there are some aspects that still 
@@ -80,7 +90,7 @@ Obviously a proper timezone setting is nice in order to not be confused by the b
 We can add public keys for users.
 
 **user-public-keys.groovy:**
-{% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 user-public-keys.groovy %}
+{% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 userPublicKeys.groovy %}
 
 Adding a public key to a user is useful if you must interact with jenkins via [jenkins-cli][jenkins-cli]. 
 In my experience Jenkins CLI works best when used with the `-ssh` option. 
@@ -118,3 +128,6 @@ In the [next part][next-part] of this series we will have a quick look at Jenkin
 [jenkins-cli]: https://jenkins.io/doc/book/managing/cli/
 [next-part]: /weblog/2019/02/09/jenkins-as-code-part-3/
 [gist-config]: https://gist.github.com/fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76
+[hashi-vault]: https://www.vaultproject.io/
+[jenkins-as-code-github-repo]: https://github.com/devtail/jenkins-as-code
+[casc-readme]: https://github.com/jenkinsci/configuration-as-code-plugin
