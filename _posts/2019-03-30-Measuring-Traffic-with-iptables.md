@@ -15,10 +15,10 @@ I recently read about a neat method of measuring traffic with iptables on linux 
 This is a rather short post describing that approach. 
 <!--more-->
 
-## Benefits of using iptables for traffic measurement
+## Benefits of using iptables for traffic measurements
 
 1. One nice thing about [iptables][iptables] is that it is very likely to be present on any linux server/client you run, so you dont need to install any extra packages. 
-2. For infrastructure debugging/planning purposes you might need to know quickly how much traffic flows between 2 specific hosts/ports/... . Maybe you do not have monitoring in place yet or the monitoring is not fine grained enough (e.g., measuring ALL packets on host interfaces).
+2. For infrastructure debugging/planning purposes you might need to know quickly how much traffic flows between 2 specific hosts/ports/... . Maybe you do not have monitoring in place yet or the monitoring is not fine grained enough (e.g., aggregating ALL packets on host interfaces).
 3. In pentesting this is a fast and easy method to measure how much traffic/attention your operation produces. 
 
 ## Hands-on Example
@@ -27,8 +27,7 @@ Let us assume we want to quickly measure the traffic between the current machine
 
 Initially, we have empty iptables chains:
 
-{% include tags/shell-start.html %}
-~# iptables -L
+{% include tags/shell-start.html %}~# iptables -L
 Chain INPUT (policy ACCEPT)
 target     prot opt source               destination         
 
@@ -42,8 +41,7 @@ target     prot opt source               destination
 Of course some servers might already have rules attached and we do not want to mess with them. 
 We create a new chain dedicated for our measurements:
 
-{% include tags/shell-start.html %}
-~# iptables -N TARGET
+{% include tags/shell-start.html %}~# iptables -N TARGET
 ~# iptables -L
 Chain INPUT (policy ACCEPT)
 target     prot opt source               destination         
@@ -61,8 +59,7 @@ target     prot opt source               destination
 Now we attach measurement rules. 
 We want to measure traffic between the current server the machine 10.11.1.227 in our local network: 
 
-{% include tags/shell-start.html %}
-~# iptables -A TARGET -d 10.11.1.227
+{% include tags/shell-start.html %}~# iptables -A TARGET -d 10.11.1.227
 ~# iptables -A TARGET -s 10.11.1.227
 ~# iptables -L
 Chain INPUT (policy ACCEPT)
@@ -82,8 +79,7 @@ target     prot opt source               destination
 
 Next, we attach the new chain to input and output chains:
 
-{% include tags/shell-start.html %}
-~# iptables -A INPUT -j TARGET
+{% include tags/shell-start.html %}~# iptables -A INPUT -j TARGET
 ~# iptables -A OUTPUT -j TARGET
 ~# iptables -L
 Chain INPUT (policy ACCEPT)
@@ -106,8 +102,7 @@ target     prot opt source               destination
 Now everything is in place. 
 We can finally zero the packet and byte counters, trigger a command to produce traffic and verify that the traffic was counted:
 
-{% include tags/shell-start.html %}
-~# iptables -Z
+{% include tags/shell-start.html %}~# iptables -Z
 ~# nmap -nA 10.11.1.227
 ..snip..
 ~# iptables -L TARGET -n -v -x
@@ -126,8 +121,7 @@ Use it only on networks that you own or for which you have explicit scanning per
 
 After we are done we can cleanup:
 
-{% include tags/shell-start.html %}
-~# iptables -L
+{% include tags/shell-start.html %}~# iptables -L
 Chain INPUT (policy ACCEPT)
 target     prot opt source               destination         
 TARGET     all  --  anywhere             anywhere            
