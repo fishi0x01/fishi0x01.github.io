@@ -2,7 +2,7 @@
 layout: post
 title: "Jenkins-as-Code Part I | Initial Setup"
 date: 2019-01-06 14:45:00 +0000
-modified: 2019-03-10 12:00:00 +0000
+modified: 2019-03-30 10:00:00 +0000
 comments: true
 disqus_id: 15
 permalink: weblog/2019/01/06/jenkins-as-code-part-1/
@@ -17,12 +17,7 @@ The goal is to configure every aspect of Jenkins and its pipelines from a centra
 We will leverage groovy scripting, jobDSL and [shared libraries][shared-libraries] to not only codify the build/deploy pipelines ([pipeline-as-code][pipeline-as-code]), but to also bootstrap and configure Jenkins from scratch (e.g., credentials, authorization, theme and job setup).
 <!--more-->
 
-I recently started to move away from my SRE/DevOps position to dive deeper into the world of
-Information Security Engineering.
-This series is a good way to share some knowledge about Jenkins and at the same time
-have a manual for myself to be able to setup a Jenkins in a pure \*-as-code fashion.
-
-This is what we want to have at the end of this series:
+The following demo shows what we have at the end of this series:
 
 <br/>
 <img src="/content-images/jenkins-bootstrap-700px.gif" alt="Demo" style="display: block; margin-left: auto; margin-right: auto;">
@@ -33,7 +28,7 @@ Every aspect of what is shown here can be found in full context in the [jenkins-
 It is usually a good idea to have as much as possible setup in an \*-as-code approach, because it offers:
 - clear definitions and automation, i.e., clear state definition and reproducibility
 - rollouts from central servers (offers audit logs)
-- a workflow like common software development, i.e., testing and reviewing is easier
+- common software development workflows, i.e., testing, reviewing and rollouts are easier to manage
 
 Since Jenkins 2.x we can use pipeline-as-code approaches like [Travis][travis] or [CircleCI][circleci] do.
 However, the overall (plugin) [configuration](#configuration-script) and setup of [job interfaces](#job-interface) is not covered by pipeline-as-code.
@@ -58,7 +53,7 @@ In order to achieve its goal the approach leverages jobDSL, configuration and pi
 
 #### Job Interface
 A job interface describes the job in the Jenkins UI.
-Deep down a job interface is xml code on the Jenkins master instance, usually found at `${JENKINS_HOME}/jobs`.
+Deep down a job interface is xml on the Jenkins master instance, usually found at `${JENKINS_HOME}/jobs`.
 We use a job interface to declare input parameters and to trigger the job.
 Preferably, a job interface is created using the Jenkins [jobDSL plugin][jobdsl-plugin].
 When a job is triggered it loads the pipeline definition.
@@ -119,7 +114,7 @@ We want to build an image which automatically bootstraps our Jenkins with an ini
 {% gist fishi0x01/2b33eb533deae0a78ce23b108849bfdc Dockerfile %}
 
 {% include tags/hint-start.html %}
-**NOTE:** That Dockerfile also installs vault and AzureCLI. Those are not necessary in this part of the series, but we install them anyways for later use.
+**NOTE:** That Dockerfile also installs HashiCorp's Vault. While it is not needed in this part of the series we install it anyways for later use.
 {% include tags/hint-end.html %}
 
 Also, we must ensure that some plugins are installed.
@@ -127,8 +122,11 @@ Also, we must ensure that some plugins are installed.
 **plugins.txt:**
 {% gist fishi0x01/2b33eb533deae0a78ce23b108849bfdc plugins.txt %}
 
+Most of those plugins are not necessary at this step of the series, but might come in handy later on. 
+
 {% include tags/hint-start.html %}
-**NOTE:** Most of the plugins are not necessary at this step of the series, but might become handy later on.
+**NOTE:** Plugin versions are not pinned here as this is a demo. 
+However, I recommend to pin the plugin versions inside the `plugins.txt` in order to have deterministic docker image builds. 
 {% include tags/hint-end.html %}
 
 ### Initial Pipeline Interface
