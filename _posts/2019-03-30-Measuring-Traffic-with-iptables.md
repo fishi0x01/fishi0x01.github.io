@@ -2,7 +2,7 @@
 layout: post
 title: "Measuring Traffic with iptables"
 date: 2019-03-30 10:30:00 +0000
-modified: 2019-03-30 11:30:00 +0000 
+modified: 2019-04-09 09:30:00 +0000 
 comments: true
 disqus_id: 18
 permalink: weblog/2019/03/30/measuring-traffic-with-iptables/
@@ -57,7 +57,7 @@ target     prot opt source               destination
 {% include tags/shell-end.html %}
 
 Now we attach measurement rules. 
-We want to measure traffic between the current server the machine 10.11.1.227 in our local network: 
+We want to measure traffic between the current server and the machine 10.11.1.227 in our local network: 
 
 {% include tags/shell-start.html %}~# iptables -A TARGET -d 10.11.1.227
 ~# iptables -A TARGET -s 10.11.1.227
