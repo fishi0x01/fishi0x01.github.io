@@ -1,5 +1,6 @@
 ---
 layout: page
+image: /content-images/karl-1.jpg
 title: About
 permalink: /home/about/
 ---
