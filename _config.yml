@@ -7,6 +7,8 @@ description: >
 baseurl: "" 
 url: "http://fishi.devtail.io" 
 
+encoding: UTF-8
+
 # Media
 github_username:  fishi0x01
 hackerrank_username: fishi0x01
