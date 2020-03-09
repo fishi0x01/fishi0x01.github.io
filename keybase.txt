@@ -1,29 +1,32 @@
+==================================================================
+https://keybase.io/fishi0x01
+--------------------------------------------------------------------
+
 I hereby claim:
 
   * I am an admin of https://fishi.devtail.io
-  * I am fishi (https://keybase.io/fishi) on keybase.
-  * I have a public key ASAJZDqCC63ash9grQadaoo1nAzw8uhByx8JRuj2nFR5Hgo
+  * I am fishi0x01 (https://keybase.io/fishi0x01) on keybase.
+  * I have a public key ASBC98LoqVmGXqBk9o2PyofHRZ7Ee5d2Yi5C09wcQsxuzAo
 
 To do so, I am signing this object:
 
 {
   "body": {
     "key": {
-      "eldest_kid": "012009643a820baddab21f60ad069d6a8a359c0cf0f2e841cb1f0946e8f69c54791e0a",
+      "eldest_kid": "012042f7c2e8a959865ea064f68d8fca87c7459ec47b9776622e42d3dc1c42cc6ecc0a",
       "host": "keybase.io",
-      "kid": "012009643a820baddab21f60ad069d6a8a359c0cf0f2e841cb1f0946e8f69c54791e0a",
-      "uid": "9301a5cc76ddd61df9ab783d49454a19",
-      "username": "fishi"
+      "kid": "012042f7c2e8a959865ea064f68d8fca87c7459ec47b9776622e42d3dc1c42cc6ecc0a",
+      "uid": "47c775472d10924240bdb40444ae0e19",
+      "username": "fishi0x01"
     },
     "merkle_root": {
-      "ctime": 1548853529,
-      "hash": "629bccc37551b3d3a59fec1f217cffa86923238d7d8ffc130fa1b55e3b726b438f0097ad74873e50aa90547511a34fd3651d888f5d78f41e74773a9dfcf
-70c18",
-      "hash_meta": "71ecec8b6a16ddfa56abb6b6b0bae908c66d931953d94949b8b8d3b17587e8ee",
-      "seqno": 4661867
+      "ctime": 1583787893,
+      "hash": "de878820ab0ee1719659e0eb01bb0e054aa2c339585d007aa82b43139c0b98bdac573208454c59142f96269fe33f917e66f94649e5ad72a2e86013395803aad5",
+      "hash_meta": "ca9a4ae426d98b09dca4ce806b559690a3edf3e6bc79b27501424a2e1cab18ee",
+      "seqno": 15231375
     },
     "service": {
-      "entropy": "E70lnPSP1SbGgQ5V+WkNdf42",
+      "entropy": "5A/NqXjVxEzAy+pmE99axckY",
       "hostname": "fishi.devtail.io",
       "protocol": "https:"
     },
@@ -32,22 +35,22 @@ To do so, I am signing this object:
   },
   "client": {
     "name": "keybase.io go client",
-    "version": "3.0.0"
+    "version": "5.2.1"
   },
-  "ctime": 1548853554,
+  "ctime": 1583787901,
   "expire_in": 504576000,
-  "prev": "1a46258944a1e2d51e28287386d24db00a7d1f324348fcb43407016f528c7074",
+  "prev": "5d759fc8b7ff0ae4cb5566ccf50f97b82c18496ba962e5c4f97c7fd21b1bc76f",
   "seqno": 6,
   "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgCWQ6ggut2rIfYK0GnWqKNZwM8PLoQcsfCUbo9pxUeR4Kp3BheWxvYWTESpcCBsQgGkYliUSh4tUeKChzhtJNsAp9Hz
-JDSPy0NAcBb1KMcHTEIEtxOnZAJZe5v6qDQXy1Jt8onJ1ex+raVeOOWdIbLGRYAgHCo3NpZ8RA0H5n+zV6g1gyLfveLnCwxSTcN9L5wU505ycsdybK4VIf4pZy1c+98zfCwvbni3MC
-epcE4HefvmK+WM00oMrkD6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIA9sAN2qfTuaWaYxwESJ5+UxLhNUKnJfHLN+OksBzJ8Vo3RhZ80CAqd2ZXJzaW9uAQ==
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgQvfC6KlZhl6gZPaNj8qHx0WexHuXdmIuQtPcHELMbswKp3BheWxvYWTESpcCBsQgXXWfyLf/CuTLVWbM9Q+XuCwYSWupYuXE+Xx/0hsbx2/EIGsEYtw27Me8SzdS9ivuWds54ri7vVsIlWDoWrPIgoBzAgHCo3NpZ8RA5euVvE9ZK7NPm2ZkSYzaSorStw1ihrzJMxACbbQcqsKXLCg7Am9iajzta17UwH0C9p1e6yecvS62y5Z/O/zVC6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMYgDXlScovw9EMhOf2ANQZsi/puWrWZ2ayYRgLAttkSo3RhZ80CAqd2ZXJzaW9uAQ==
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
 
-View my publicly-auditable identity here: https://keybase.io/fishi
+View my publicly-auditable identity here: https://keybase.io/fishi0x01
+
+==================================================================
