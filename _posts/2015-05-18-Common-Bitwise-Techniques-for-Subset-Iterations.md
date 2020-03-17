@@ -6,8 +6,6 @@ modified: 2015-06-19 12:03:12 +0000
 comments: true
 disqus_id: 8
 permalink: weblog/2015/05/18/common-bitwise-techniques-subset-iterations/
-redirect_from:
-  - /weblog/9/
 categories: algorithm python
 ---
 

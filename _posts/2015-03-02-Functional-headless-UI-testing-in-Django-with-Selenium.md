@@ -6,8 +6,6 @@ modified: 2015-06-18 02:04:03 +0000
 comments: true
 disqus_id: 6
 permalink: weblog/2015/03/02/functional-headless-ui-testing-django-selenium/
-redirect_from:
-  - /weblog/7/
 categories: ci django python
 ---
 
@@ -98,7 +96,7 @@ For embedding your tests in a CI process, please refer to my previous post on ho
 
 Happy UI testing!
 
-[fishi-django-ci]: http://fishi.devtail.com/weblog/6/
+[fishi-django-ci]: /weblog/2015/02/22/setting-django-ci-jenkins-and-git/
 [selenium]: http://www.seleniumhq.org/
 [debian-ff]: http://superuser.com/questions/322376/how-to-install-the-real-firefox-on-debian
 [xvfb]: http://en.wikipedia.org/wiki/Xvfb

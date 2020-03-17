@@ -6,8 +6,6 @@ modified: 2015-06-18 02:03:29 +0000
 comments: true
 disqus_id: 2
 permalink: weblog/2015/01/21/pure-java-dcom-bridge-j-interop/
-redirect_from:
-  - /weblog/3/
 categories: dcom java
 ---
 
@@ -88,7 +86,7 @@ Through our initial subscription the events are being stored at the remote Windo
 That's it! We can now easliy remotely monitor our WMI target machine.
 {: .text-justify}
 
-[blog-enable-dcom]: http://fishi.devtail.com/weblog/2/
+[blog-enable-dcom]: /weblog/2015/01/16/enabling-dcom-windows-7-8-and-server-2012/
 [j-interop]: http://j-interop.org/
 [j-interop-jar]: http://sourceforge.net/projects/j-interop/files/
 [microsoft-wmi-docs]: https://msdn.microsoft.com/en-us/library/aa394388%28v=vs.85%29.aspx

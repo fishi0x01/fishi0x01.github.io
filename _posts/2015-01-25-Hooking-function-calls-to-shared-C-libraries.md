@@ -6,8 +6,6 @@ modified: 2015-06-18 02:03:37 +0000
 permalink: weblog/2015/01/25/intercepting-hooking-function-calls-shared-c-libraries/
 comments: true
 disqus_id: 3
-redirect_from:
-  - /weblog/4/
 categories: c linux
 ---
 

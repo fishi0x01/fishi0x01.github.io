@@ -6,8 +6,6 @@ modified: 2017-11-28 17:28:34 +0000
 comments: true
 disqus_id: 14
 permalink: weblog/2017/09/09/consul-service-id-hunt/
-redirect_from:
-  - /weblog/F/
 categories: consul
 ---
 

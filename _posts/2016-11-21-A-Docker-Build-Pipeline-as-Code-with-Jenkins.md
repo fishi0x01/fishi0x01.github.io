@@ -6,8 +6,6 @@ modified: 2017-01-21 13:12:05 +0000
 comments: true
 disqus_id: 13
 permalink: weblog/2016/11/20/docker-build-pipeline-as-code-jenkins/
-redirect_from:
-  - /weblog/E/
 categories: jenkins docker build-pipeline groovy
 ---
 

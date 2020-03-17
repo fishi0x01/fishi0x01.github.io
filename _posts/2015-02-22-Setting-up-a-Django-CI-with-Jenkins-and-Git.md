@@ -6,8 +6,6 @@ modified: 2020-03-17 02:03:11 +0000
 comments: true
 disqus_id: 5
 permalink: weblog/2015/02/22/setting-django-ci-jenkins-and-git/
-redirect_from:
-  - /weblog/6/
 categories: ci django git
 ---
 
@@ -15,7 +13,7 @@ After experimenting with [Django][django-project] for a while now, I decided tha
 This is why in this post I will describe how to setup [Jenkins][jenkins-project] for Django projects on Debian servers to detect changes to a Git repository, run tests in case of changes and deploy them on your Apache Server.<!--more-->
 {: .text-justify}
 
-**Note:** This article is rather old and describes a very manual way of doing things. A more sophisticated way to bootstrap Jenkins in an as-code fashion can be found [here](/weblog/10/).
+**Note:** This article is rather old and describes a very manual way of doing things. A more sophisticated way to bootstrap Jenkins in an as-code fashion can be found [here](/weblog/2019/01/06/jenkins-as-code-part-1/).
 
 I assume we have a Django project `d_project` at `/srv/www/django/d_project` running in a virtual environment at `/srv/www/django/d_project/py-env`. 
 {: .text-justify}

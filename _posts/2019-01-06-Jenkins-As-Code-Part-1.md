@@ -6,8 +6,6 @@ modified: 2019-03-30 10:00:00 +0000
 comments: true
 disqus_id: 15
 permalink: weblog/2019/01/06/jenkins-as-code-part-1/
-redirect_from:
-  - /weblog/10/
 categories: jenkins
 ---
 

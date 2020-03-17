@@ -6,8 +6,6 @@ modified: 2015-06-18 02:06:58 +0000
 comments: true
 disqus_id: 9
 permalink: weblog/2015/06/15/another-python-bf-interpreter/
-redirect_from:
-  - /weblog/A/
 categories: python
 ---
 

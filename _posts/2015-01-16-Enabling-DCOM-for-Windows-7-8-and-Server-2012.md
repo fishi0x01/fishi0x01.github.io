@@ -6,8 +6,6 @@ modified: 2015-06-18 02:03:21 +0000
 comments: true
 disqus_id: 1
 permalink: /weblog/2015/01/16/enabling-dcom-windows-7-8-and-server-2012/
-redirect_from: 
-  - /weblog/2/
 categories: c# windows dcom powershell
 ---
 
@@ -104,4 +102,4 @@ In the next post I explain how to build a [pure Java DCOM Bridge][weblog-3] to r
 
 [setacl]: https://helgeklein.com/setacl/
 [bedrich-chaloupka]: http://shrekpoint.blogspot.de/2012/08/taking-ownership-of-dcom-registry.html
-[weblog-3]: http://fishi.devtail.com/weblog/3/
+[weblog-3]: /weblog/2015/01/21/pure-java-dcom-bridge-j-interop/

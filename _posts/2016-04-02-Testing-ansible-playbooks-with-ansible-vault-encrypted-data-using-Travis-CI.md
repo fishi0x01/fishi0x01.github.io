@@ -6,8 +6,6 @@ modified: 2015-05-26 09:04:33 +0000
 comments: true
 disqus_id: 11
 permalink: weblog/2016/04/02/testing-ansible-ansible-vault-travis-ci/
-redirect_from:
-  - /weblog/C/
 categories: ansible ci
 ---
 

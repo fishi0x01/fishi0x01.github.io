@@ -6,8 +6,6 @@ modified: 2015-06-28 21:41:03 +0000
 comments: true
 disqus_id: 10
 permalink: weblog/2015/06/25/computing-large-binomial-coefficients-modulo-prime-non-prime/
-redirect_from:
-  - /weblog/B/
 categories: algorithm python
 ---
 

@@ -6,8 +6,6 @@ modified: 2015-06-22 13:13:17 +0000
 permalink: weblog/2015/02/06/dyamic-login-messages-update-motd/
 comments: true
 disqus_id: 4
-redirect_from:
-  - /weblog/5/
 categories: linux sysadmin
 ---
 

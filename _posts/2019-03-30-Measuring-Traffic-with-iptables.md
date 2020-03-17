@@ -6,8 +6,6 @@ modified: 2019-04-09 09:30:00 +0000
 comments: true
 disqus_id: 18
 permalink: weblog/2019/03/30/measuring-traffic-with-iptables/
-redirect_from:
-  - /weblog/13/
 categories: tooling
 ---
 
