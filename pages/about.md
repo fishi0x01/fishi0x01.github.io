@@ -5,16 +5,26 @@ title: About
 permalink: /home/about/
 ---
 
-My name is Karl Fischer and I am a SRE/InfoSec Engineer from Germany.
+My name is Karl and I am a Software Engineer from Germany. 
+{: .text-justify}
 
-I am currently working at the [D4L data4life gGmbH](https://www.data4life.care) in Berlin, but in the past besides Germany have also studied/worked in Finland, Spain and China.
+My main focus is on platform architecture and automation of infrastructure, security and compliance. 
+I am employed at [D4L data4life gGmbH](https://www.data4life.care) in Berlin. 
+{: .text-justify}
 
-My main focus is on platform architecture and automation of security, compliance and infrastructure (cloud and bare-metal) topics. 
-I like to bring automation to other teams, i.e., working in close cooperation with developers to build continuous delivery pipelines for containerized or packaged applications.
+I try my best to every day practice something known or learn something new, even if it is just a small thing.
+Some technical principles/philosophies I fancy include [UNIX](https://en.wikipedia.org/wiki/Unix_philosophy), Immutability and [KISS](https://en.wikipedia.org/wiki/KISS_principle). However, above all stands pragmatism because I haven't seen the silver bullet yet.
+{: .text-justify}
 
-I also dealt with compliance topics, i.e., identifying and implementing modern security standards for IT companies (ISMS, specifically [ISO27k1](https://www.iso.org/isoiec-27001-information-security.html)/[BSI](https://www.bsi.bund.de/EN/Topics/ITGrundschutz/itgrundschutz_node.html)), but I must admit that compliance paper work is not my favorite field. 
+Like many people in my field I am a big fan of the [HashiCorp Stack](https://www.hashicorp.com/). 
+Further, I like [nix](https://github.com/fishi0x01/local-env/tree/master/nix), enjoy programming in [go](https://github.com/fishi0x01/vsh) or [rust](https://github.com/fishi0x01/docker-extract) and am repeatedly overwhelmed and humbled by the unlimited knowledge of the open source community.
+{: .text-justify}
 
-In general I am always happy if I get the chance to experiment with new technologies and explore new fields.
+If I'm not in front of a computer or practicing [QwanKiDo](https://www.qwankido.ca/), I am likely to learn Mandarine Chinese or play classical guitar. 
+{: .text-justify}
 
-Besides programming, I try my best learning Mandarin Chinese and Spanish. 
-Also, I love playing classical guitar, especially Flamenco.
+\\
+\\
+_"I hear and I forget. I see and I remember. I do and I understand."_\\
+-- Confucius
+{: style="text-align: center;"}

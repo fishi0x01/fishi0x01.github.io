@@ -16,6 +16,7 @@ In this part we will focus on configuring Jenkins through code.
 The goal is to avoid manual configuration in the UI and instead 
 leverage the configuration as code plugin and configuration scripts 
 in a central Github repository which are executed by a Jenkins pipeline.
+{: .text-justify}
 <!--more-->
 
 In the [previous part][part-one] of this series we created a Jenkins 
@@ -25,10 +26,12 @@ running the [CasC][vocabular-casc] plugin,
 executing [configuration scripts][vocabular-configuration-script] 
 and [seeding][vocabular-seeding] job interfaces. 
 The complete code can be found in this [demo repo][jenkins-as-code-github-repo].
+{: .text-justify}
 
 ## Directory Layout
 
 Lets quickly remind ourselves about the layout of our shared library repository.
+{: .text-justify}
 
 ```
 shared-library
@@ -48,18 +51,22 @@ shared-library
 
 The majority of Jenkins can be configured using CasC, but there are a few things 
 which do still require groovy system configuration scripts, like setting the timezone. 
+{: .text-justify}
 
 ## Configuration as Code Plugin
 
 Configuring Jenkins with groovy scripts can be tedious. 
 You have to go through the plugin's code, find the constructor and 
 properly use it in groovy code in order to configure it. 
+{: .text-justify}
 
 However, in 2018 a new approach arised in the form of a plugin. 
 It is called the [configuration-as-code plugin][plugin-configuration-as-code] (CasC). 
 The goal of this plugin is to describe your jenkins configuration in simple `.yaml` files. 
+{: .text-justify}
 
 The following CasC file configures Security, GitHub, OAuth, Slack, Themes, Agents and Authorizations:
+{: .text-justify}
 
 **jenkins.yaml:**
 {% gist fishi0x01/63ce90a4e5b24aa0297aa69622d8ca8f jenkins.yaml %}
@@ -72,15 +79,18 @@ A secret like `${jenkins-ssh-keys/ssh-agent-access-key}` is then loaded from Cas
 `/var/jenkins_home/jenkins-ssh-keys/ssh-agent-access-key`. 
 However, I am a big fan of HashiCorp's Vault. Whenever possible, I use it as a secret source, but 
 that is out of scope of this blog post. To setup CasC with Vault, consult their [README][casc-readme]. 
+{: .text-justify}
 
 ## Configuration Scripts
 
 CasC does the heavy lifting of our configuration work. However, there are some aspects that still 
 need some groovy scripting magic. 
+{: .text-justify}
 
 ### Timezone
 
 Obviously a proper timezone setting is nice in order to not be confused by the build times.
+{: .text-justify}
 
 **timezone.groovy:**
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 timezone.groovy %}
@@ -88,18 +98,21 @@ Obviously a proper timezone setting is nice in order to not be confused by the b
 ### User Public Keys
 
 We can add public keys for users.
+{: .text-justify}
 
 **user-public-keys.groovy:**
 {% gist fishi0x01/7c2d29afbaa0f16126eb4d4b35942f76 userPublicKeys.groovy %}
 
 Adding a public key to a user is useful if you must interact with jenkins via [jenkins-cli][jenkins-cli]. 
 In my experience Jenkins CLI works best when used with the `-ssh` option. 
+{: .text-justify}
 
 ### Others
 
 Over the time I gathered more configuration scripts, e.g., GitHub OAuth or Slack configuration. 
 Thanks to CasC I do not need them anylonger. However, I keep the collection in a 
 [gist][gist-config]. Maybe it will still be of help to someone out there. 
+{: .text-justify}
 
 ## Summary
 
@@ -109,8 +122,10 @@ The configuration is executed via a single pre-baked configuration and seeding p
 which uses our shared library. 
 We can change a configuration by pushing the change to the shared library and running 
 the pre-baked configuration and seeding pipeline in Jenkins. 
+{: .text-justify}
 
 In the [next part][next-part] of this series we will have a quick look at Jenkins JobDSL plugin for job interfaces as-code.
+{: .text-justify}
 
 [plugin-configuration-as-code]: https://plugins.jenkins.io/configuration-as-code
 [plugin-github-oauth]: https://plugins.jenkins.io/github-oauth

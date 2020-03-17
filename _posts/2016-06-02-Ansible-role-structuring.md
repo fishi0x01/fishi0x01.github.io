@@ -12,8 +12,10 @@ categories: ansible
 ---
 
 In this short post I want to talk about structuring Ansible roles in a way that OS specific tasks and variables are cleanly separated from the other common logic of the role. 
+{: .text-justify}
 
 My main sources of inspiration for role structuring are [Ansible Galaxy][ansible-galaxy] and the [DebObs repository][ansible-debops] and I would like to share my findings here.<!--more-->
+{: .text-justify}
 
 ## A simple ssh role ##
 
@@ -23,6 +25,7 @@ Further, we got the `handlers` directory, which contains service handlers which 
 We also have a `vars` directory, which as the name already can contain variables. 
 Jinja2 templates and static files are being stored inside the `templates` and `files` directory respectively. 
 Another common directory is the `defaults` directory, which could be used for OS independant variables. 
+{: .text-justify}
 
 <pre>
 ssh
@@ -35,26 +38,31 @@ ssh
 </pre>
 
 In each directory, except `files` and `templates`, the file `main.yml` gets included automatically when you use the role. 
+{: .text-justify}
 
 Now, to write our ssh role for Ubuntu 14.04 we would need a template for the sshd configuration. 
+{: .text-justify}
 
 **templates/sshd_config.j2**
 
 {% gist fishi0x01/4d613f4fb0034b7197a92cd36bd34801 roles-ssh-templates-sshd_config.j2 %}
 
 Next, we need a handler for the sshd service. 
+{: .text-justify}
 
 **handlers/main.yml**
 
 {% gist fishi0x01/4d613f4fb0034b7197a92cd36bd34801 roles-ssh-handlers-main.yml %}
 
 Further, we need tasks which ensure that sshd is installed and the ssh config template gets rendered and deployed. 
+{: .text-justify}
 
 **tasks/main.yml**
 
 {% gist fishi0x01/4d613f4fb0034b7197a92cd36bd34801 roles-ssh-tasks-main.yml %}
 
 Finally, we could define some common variables.
+{: .text-justify}
 
 **defaults/main.yml**
 
@@ -65,8 +73,10 @@ Finally, we could define some common variables.
 While the above approach does work for Ubuntu 14.04, we still would like to easily extend our role for any other OS too. 
 One easy way to do so, is by separating OS specific tasks and variables in different OS dedicated files. 
 Ansible helps us to automatically identify the currently used distribution with `{% raw %}{{ ansible_distribution }}{% endraw %}` and `{% raw %}{{ ansible_distribution_version }}{% endraw %}`, so we just have to name the OS dedicated yml files accordingly and include them in our `main.yml` files. 
+{: .text-justify}
 
 For our ssh role, the dir tree would then look something like that:
+{: .text-justify}
 
 <pre>
 ssh
@@ -85,6 +95,7 @@ ssh
 </pre>
 
 Here are the gists of the files.
+{: .text-justify}
 
 **defaults/main.yml**
 
@@ -113,6 +124,7 @@ Here are the gists of the files.
 In that way we separated OS specific variables in dedicated files inside the `vars` directory. 
 Also OS specific tasks and handlers can now easily be separated. 
 Ansible detects the OS it operates on and includes the dedicated files.
+{: .text-justify}
 
 
 [ansible-galaxy]: https://galaxy.ansible.com/

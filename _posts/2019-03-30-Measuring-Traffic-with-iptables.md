@@ -13,6 +13,7 @@ categories: tooling
 
 I recently read about a neat method of measuring traffic with iptables on linux hosts, which is nice for pentesting or infrastructure debugging. 
 This is a rather short post describing that approach. 
+{: .text-justify}
 <!--more-->
 
 ## Benefits of using iptables for traffic measurements
@@ -20,12 +21,15 @@ This is a rather short post describing that approach.
 1. One nice thing about [iptables][iptables] is that it is very likely to be present on any linux server/client you run, so you dont need to install any extra packages. 
 2. For infrastructure debugging/planning purposes you might need to know quickly how much traffic flows between 2 specific hosts/ports/... . Maybe you do not have monitoring in place yet or the monitoring is not fine grained enough (e.g., aggregating ALL packets on host interfaces).
 3. In pentesting this is a fast and easy method to measure how much traffic/attention your operation produces. 
+{: .text-justify}
 
 ## Hands-on Example
 
 Let us assume we want to quickly measure the traffic between the current machine and a remote host. 
+{: .text-justify}
 
 Initially, we have empty iptables chains:
+{: .text-justify}
 
 {% include tags/shell-start.html %}~# iptables -L
 Chain INPUT (policy ACCEPT)
@@ -40,6 +44,7 @@ target     prot opt source               destination
 
 Of course some servers might already have rules attached and we do not want to mess with them. 
 We create a new chain dedicated for our measurements:
+{: .text-justify}
 
 {% include tags/shell-start.html %}~# iptables -N TARGET
 ~# iptables -L
@@ -58,6 +63,7 @@ target     prot opt source               destination
 
 Now we attach measurement rules. 
 We want to measure traffic between the current server and the machine 10.11.1.227 in our local network: 
+{: .text-justify}
 
 {% include tags/shell-start.html %}~# iptables -A TARGET -d 10.11.1.227
 ~# iptables -A TARGET -s 10.11.1.227
@@ -78,6 +84,7 @@ target     prot opt source               destination
 {% include tags/shell-end.html %}
 
 Next, we attach the new chain to input and output chains:
+{: .text-justify}
 
 {% include tags/shell-start.html %}~# iptables -A INPUT -j TARGET
 ~# iptables -A OUTPUT -j TARGET
@@ -101,6 +108,7 @@ target     prot opt source               destination
 
 Now everything is in place. 
 We can finally zero the packet and byte counters, trigger a command to produce traffic and verify that the traffic was counted:
+{: .text-justify}
 
 {% include tags/shell-start.html %}~# iptables -Z
 ~# nmap -nA 10.11.1.227
@@ -113,13 +121,16 @@ Chain TARGET (2 references)
 {% include tags/shell-end.html %}
 
 We clearly see how many packets and bytes were transferred between the current server and 10.11.1.227.
+{: .text-justify}
 
 {% include tags/hint-start.html %}
 **NOTE:** Using [nmap][nmap] for port scanning is illegal in most countries. 
 Use it only on networks that you own or for which you have explicit scanning permissions from the owner.
+{: .text-justify}
 {% include tags/hint-end.html %}
 
 After we are done we can cleanup:
+{: .text-justify}
 
 {% include tags/shell-start.html %}~# iptables -L
 Chain INPUT (policy ACCEPT)
@@ -153,6 +164,7 @@ target     prot opt source               destination
 {% include tags/shell-end.html %}
 
 Finally, here is a short script for setting up the chains and rules to measure traffic between 2 hosts:
+{: .text-justify}
 
 **measureTraffic.sh**
 {% gist fishi0x01/47bf14940e08650374ef9501e71feb5d measureTraffic.sh %}
