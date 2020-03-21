@@ -30,11 +30,12 @@ layout: default
             {% include icon-keybaseio.html username=site.keybaseio_username %}
           </li>
           <li>
-            {% include icon-hashnode.html username=site.hashnode_username %}
+            {% include icon-hashicorp.html username=site.hashicorp_username %}
           </li>
           <li>
-            {% include icon-vagrantcloud.html username=site.vagrantcloud_username %}
+            {% include icon-hashnode.html username=site.hashnode_username %}
           </li>
+          
         </ul>
       </div>
       <div class="footer-col footer-col-2">
@@ -43,18 +44,21 @@ layout: default
             {% include icon-cratesio.html username=site.cratesio_username %}
           </li>
           <li>
+            {% include icon-vagrantcloud.html username=site.vagrantcloud_username %}
+          </li>
+          <li>
             {% include icon-openhab.html username=site.openhab_username %}
           </li>
           <li>
             {% include icon-memrise.html username=site.memrise_username %}
           </li>
-          <li>
-            {% include icon-reddit.html username=site.reddit_username %}
-          </li>
         </ul>
       </div>
       <div class="footer-col footer-col-3">
         <ul class="social-media-list">
+          <li>
+            {% include icon-reddit.html username=site.reddit_username %}
+          </li>
           <li>
             {% include icon-meetup.html userid=site.meetup_id %}
           </li>
