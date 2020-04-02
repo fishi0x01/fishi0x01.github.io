@@ -20,7 +20,7 @@ Like many people in my field I am a big fan of the [HashiCorp Stack](https://www
 Further, I like [nix](https://github.com/fishi0x01/local-env/tree/master/nix), enjoy programming in [go](https://github.com/fishi0x01/vsh) or [rust](https://github.com/fishi0x01/docker-extract) and am repeatedly overwhelmed and humbled by the unlimited knowledge of the open source community.
 {: .text-justify}
 
-If I'm not in front of a computer or practicing [QwanKiDo](https://www.qwankido.ca/), I am likely to learn Mandarine Chinese or play classical guitar. 
+If I'm not in front of a computer or practicing [QwanKiDo](https://www.qwankido.ca/), I am likely to learn Mandarin Chinese or play classical guitar. 
 {: .text-justify}
 
 \\
