@@ -35,7 +35,9 @@ layout: default
           <li>
             {% include icon-hashnode.html username=site.hashnode_username %}
           </li>
-          
+          <li>
+            {% include icon-reddit.html username=site.reddit_username %}
+          </li>
         </ul>
       </div>
       <div class="footer-col footer-col-2">
@@ -52,21 +54,21 @@ layout: default
           <li>
             {% include icon-memrise.html username=site.memrise_username %}
           </li>
+          <li>
+            {% include icon-hackerrank.html username=site.hackerrank_username %}
+          </li>
         </ul>
       </div>
       <div class="footer-col footer-col-3">
         <ul class="social-media-list">
           <li>
-            {% include icon-reddit.html username=site.reddit_username %}
+            {% include icon-goodreads.html username=site.goodreads_username %}
           </li>
           <li>
             {% include icon-meetup.html userid=site.meetup_id %}
           </li>
           <li>
             {% include icon-duolingo.html username=site.duolingo_username %}
-          </li>
-          <li>
-            {% include icon-hackerrank.html username=site.hackerrank_username %}
           </li>
         </ul>
       </div>
