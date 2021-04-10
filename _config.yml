@@ -1,20 +1,19 @@
 # Site settings
 title: Karl Fischer
 email: fishi0x01@gmail.com
-description: > 
+description: >
   A tech-blog about programming, automation and deployment.
 
-baseurl: "" 
-url: "http://fishi.devtail.io" 
+baseurl: ""
+url: "http://fishi.devtail.io"
 
 encoding: UTF-8
 
 # Media
-github_username:  fishi0x01
+github_username: fishi0x01
 hackerrank_username: fishi0x01
 hashicorp_username: fishi0x01
-linkedin_username: fishi
-hackerrank_username: fishi0x01
+linkedin_username: fishi0x01
 keybaseio_username: fishi0x01
 vagrantcloud_username: fishi0x01
 cratesio_username: fishi0x01
