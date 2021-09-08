@@ -12,6 +12,7 @@ encoding: UTF-8
 # Media
 github_username: fishi0x01
 hackerrank_username: fishi0x01
+leetcode_username: fishi0x01
 hashicorp_username: fishi0x01
 linkedin_username: fishi0x01
 keybaseio_username: fishi0x01
@@ -19,7 +20,7 @@ vagrantcloud_username: fishi0x01
 cratesio_username: fishi0x01
 hashnode_username: fishi0x01
 stackoverflow_username: fishi0x01
-stackoverflow_userhash: 4478420
+stackoverflow_user_id: 4478420
 duolingo_username: fishi0x01
 memrise_username: fishi0x01
 reddit_username: fishi0x01
