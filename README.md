@@ -11,6 +11,5 @@ bundle install --path .bundle
 ## Run locally
 
 ```
-source env.sh
-bundle exec jekyll serve
+make serve
 ```
