@@ -9,7 +9,7 @@ My name is Karl and I am a Software Engineer from Germany.
 {: .text-justify}
 
 My main focus is on platform architecture and automation of infrastructure, security and compliance. 
-I am employed at [Klarna](https://www.klarna.com/) in Berlin. 
+I am employed at [Red Hat](https://www.redhat.com) in Berlin. 
 {: .text-justify}
 
 Some technical principles/philosophies I fancy include [UNIX](https://en.wikipedia.org/wiki/Unix_philosophy), Immutability and [KISS](https://en.wikipedia.org/wiki/KISS_principle). However, above all stands pragmatism because I haven't seen the silver bullet yet.
