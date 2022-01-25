@@ -19,7 +19,7 @@ In my free time I enjoy working on IoT projects, i.e., soldering prototypes, des
 Further, I like [nix](https://nixos.org/), try coding in [go](https://github.com/fishi0x01/vsh) or [rust](https://github.com/fishi0x01/docker-extract) and am repeatedly overwhelmed and humbled by the unlimited knowledge of the open source community.
 {: .text-justify}
 
-Apart from technical stuff, I practice [QwanKiDo](https://www.qwankidoberlin.de/), try to learn Mandarin Chinese and like to play classical guitar. 
+Apart from technical stuff, I practice [QwanKiDo](https://qwankido.de/), try to learn Mandarin Chinese and like to play classical guitar. 
 {: .text-justify}
 
 \\
