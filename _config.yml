@@ -27,6 +27,7 @@ reddit_username: fishi0x01
 goodreads_username: fishi0x01
 meetup_id: 220542910
 openhab_username: fishi0x01
+hackthebox_uid: 314232
 
 # Build settings
 markdown: kramdown
